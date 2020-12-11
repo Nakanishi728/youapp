@@ -6,7 +6,7 @@
   >
     <AppLogo />
     <v-toolbar-title>
-        {{ appName }}
+      {{ appName }}
     </v-toolbar-title>
   </v-app-bar>
 </template>
