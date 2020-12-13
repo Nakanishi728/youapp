@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import axios from '@/plugins/axios'
 import firebase from '@/plugins/firebase'
 
 export default {
@@ -73,8 +74,18 @@ export default {
       if (this.password !== this.passwordConfirm) {
         this.error = 'パスワードが一致していません'
       }
-      firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then((res) => {
-      })
+      firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+        .then((res) => {
+          const user = {
+            email: res.user.email,
+            name: this.name,
+            uid: res.user.uid
+          }
+          axios.post('/v1/users', { user })
+            .then(() => {
+              this.$router.push('/')
+            })
+        })
         .catch((error) => {
           this.error = ((code) => {
             switch (code) {
