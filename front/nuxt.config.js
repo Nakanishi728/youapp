@@ -1,4 +1,5 @@
-require('dotenv').config(); 
+require('dotenv').config();
+
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
@@ -68,6 +69,6 @@ export default {
   build: {
     transpile: [
       "vee-validate/dist/rules"
-    ],
+    ]
   }
 }
