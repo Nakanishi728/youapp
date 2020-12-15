@@ -109,6 +109,11 @@ export default {
           })(error.code)
         })
       this.$store.commit('setLoading', false)
+    },
+    fetch ({ redirect, store }) {
+      if (store.state.currentUser) {
+        return redirect('/')
+      }
     }
   }
 }

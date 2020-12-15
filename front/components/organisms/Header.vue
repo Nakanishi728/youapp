@@ -59,6 +59,9 @@ export default {
   computed: {
     currentUser () {
       return this.$store.state.currentUser
+    },
+    loggedIn () {
+      return this.$store.state.loggedIn
     }
   },
   methods: {
