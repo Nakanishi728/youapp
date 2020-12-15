@@ -1,5 +1,6 @@
 <template>
   <v-app style="background-color: #ECEFF1;">
+    <Flash />
     <Header />
     <v-main>
       <v-container>
@@ -11,13 +12,7 @@
 </template>
 
 <script>
-import Header from '../components/organisms/Header.vue'
-import Footer from '../components/organisms/Footer.vue'
 
 export default {
-  components: {
-    Header,
-    Footer
-  }
 }
 </script>
