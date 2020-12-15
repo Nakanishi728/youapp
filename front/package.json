@@ -15,6 +15,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "core-js": "^3.6.5",
     "firebase": "^8.1.2",
+    "loaders.css": "^0.1.2",
     "nuxt": "^2.14.6",
     "vee-validate": "3.3.0"
   },

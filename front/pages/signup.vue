@@ -71,20 +71,21 @@ export default {
   },
   methods: {
     signup () {
-      if (this.password !== this.passwordConfirm) {
-        this.error = 'パスワードが一致していません'
-      }
-      firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+      this.$store.commit('setLoading', true)
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
         .then((res) => {
           const user = {
             email: res.user.email,
             name: this.name,
             uid: res.user.uid
           }
-          axios.post('/v1/users', { user })
-            .then(() => {
-              this.$router.push('/')
-            })
+          axios.post('/v1/users', { user }).then((res) => {
+            this.$store.commit('setLoading', false)
+            this.$store.commit('setUser', res.data)
+            this.$router.push('/')
+          })
         })
         .catch((error) => {
           this.error = ((code) => {
@@ -100,6 +101,7 @@ export default {
             }
           })(error.code)
         })
+      this.$store.commit('setLoading', false)
     }
   }
 }
