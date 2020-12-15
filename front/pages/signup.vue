@@ -91,7 +91,7 @@ export default {
             setTimeout(() => {
               this.$store.commit('setFlash', {})
             }, 2000)
-            this.$router.push('/')
+            this.$router.replace('/')
           })
         })
         .catch((error) => {
