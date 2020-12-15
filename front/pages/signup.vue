@@ -84,6 +84,13 @@ export default {
           axios.post('/v1/users', { user }).then((res) => {
             this.$store.commit('setLoading', false)
             this.$store.commit('setUser', res.data)
+            this.$store.commit('setFlash', {
+              status: true,
+              message: 'ログインしました'
+            })
+            setTimeout(() => {
+              this.$store.commit('setFlash', {})
+            }, 2000)
             this.$router.push('/')
           })
         })

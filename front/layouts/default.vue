@@ -1,5 +1,6 @@
 <template>
   <v-app style="background-color: #ECEFF1;">
+    <Flash />
     <Header />
     <v-main>
       <v-container>

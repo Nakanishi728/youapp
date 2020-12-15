@@ -7,7 +7,11 @@ const store = () => {
   return new Vuex.Store({
     state: {
       currentUser: null,
-      loading: false
+      loading: false,
+      flash: {
+        status: false,
+        message: ''
+      }
     },
     mutations: {
       setUser (state, payload) {
@@ -15,6 +19,9 @@ const store = () => {
       },
       setLoading (state, payload) {
         state.loading = payload
+      },
+      setFlash (state, payload) {
+        state.flash = payload
       }
     },
     actions: {
