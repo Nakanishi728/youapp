@@ -107,8 +107,8 @@ export default {
                 return 'メールアドレスとパスワードをご確認ください'
             }
           })(error.code)
+          this.$store.commit('setLoading', false)
         })
-      this.$store.commit('setLoading', false)
     },
     fetch ({ redirect, store }) {
       if (store.state.currentUser) {
