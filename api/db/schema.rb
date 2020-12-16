@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_12_10_003928) do
     t.string "name", null: false
     t.string "email", null: false
     t.string "uid", null: false
+    t.text "profile"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index "lower((email)::text)", name: "index_users_on_LOWER_email", unique: true
