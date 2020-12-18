@@ -1,83 +1,114 @@
 <template>
-  <v-card class="mx-auto mt-5 pa-5" width="800px">
-    <v-card-title>
-      <h2 class="user-edit-title">
-        ユーザー編集
-      </h2>
-    </v-card-title>
-    <v-card-text>
-      <v-form>
-        <div class="email-box">
-          <TextField
-            v-model="email"
-            label="メールアドレス"
-            rules="max:255|required|email"
-          />
-          <v-row justify="end">
-            <v-btn
-              color="black lighten-3"
-              class="white--text"
-              @click="changeUsersEmail"
-            >
-              変更
-            </v-btn>
-          </v-row>
-        </div>
-        <ValidationObserver>
-          <div class="password-box">
+  <v-container>
+    <LoginDialog
+      :dialog="dialog"
+      :email="originEmail"
+      @closeDialog="dialog = false"
+      @loginSuccess="loginSuccess"
+    />
+    <v-card class="mx-auto mt-5 pa-5" width="800px">
+      <v-card-title>
+        <h2 class="user-edit-title">
+          ユーザー編集
+        </h2>
+      </v-card-title>
+      <v-card-text>
+        <v-form>
+          <div class="email-box">
+            <h3 class="edit-h3">
+              メールアドレス
+            </h3>
             <TextField
-              v-model="password"
-              label="変更後のパスワード"
-              rules="required|min:6"
-              :type="show1 ? 'text' : 'password'"
-              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-              vid="password"
-              @click:append="show1 = !show1"
-            />
-            <TextField
-              v-model="passwordConfirm"
-              label="変更後のパスワード(再入力)"
-              rules="required|min:6|confirmed:変更後のパスワード"
-              :type="show2 ? 'text' : 'password'"
-              :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
-              @click:append="show2 = !show2"
+              v-model="email"
+              label="メールアドレス"
+              rules="max:255|required|email"
             />
             <v-row justify="end">
               <v-btn
                 color="black lighten-3"
                 class="white--text"
+                @click="openDialogForEmail"
               >
                 変更
               </v-btn>
             </v-row>
           </div>
-        </ValidationObserver>
-        <p v-if="error" class="errors">
-          {{ error }}
-        </p>
-      </v-form>
-    </v-card-text>
-  </v-card>
+          <ValidationObserver>
+            <div class="password-box">
+              <h3 class="edit-h3">
+                パスワード
+              </h3>
+              <TextField
+                v-model="password"
+                label="変更後のパスワード"
+                rules="required|min:6"
+                :type="show1 ? 'text' : 'password'"
+                :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                vid="password"
+                @click:append="show1 = !show1"
+              />
+              <TextField
+                v-model="passwordConfirm"
+                label="変更後のパスワード(再入力)"
+                rules="required|min:6|confirmed:変更後のパスワード"
+                :type="show2 ? 'text' : 'password'"
+                :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
+                @click:append="show2 = !show2"
+              />
+              <v-row justify="end">
+                <v-btn
+                  color="black lighten-3"
+                  class="white--text"
+                  @click="openDialogForPassword"
+                >
+                  変更
+                </v-btn>
+              </v-row>
+            </div>
+          </ValidationObserver>
+          <p v-if="error" class="errors">
+            {{ error }}
+          </p>
+        </v-form>
+      </v-card-text>
+    </v-card>
+  </v-container>
 </template>
 
 <script>
 import axios from '@/plugins/axios'
 import firebase from '@/plugins/firebase'
 import TextField from '~/components/atoms/TextField.vue'
+import LoginDialog from '~/components/organisms/LoginDialog.vue'
 
 export default {
   components: {
-    TextField
+    TextField,
+    LoginDialog
+  },
+  fetch ({ store, redirect }) {
+    store.watch(
+      state => state.currentUser,
+      (newUser, oldUser) => {
+        if (!newUser) {
+          return redirect('/login')
+        }
+      }
+    )
   },
   data () {
     return {
       email: '',
+      originEmail: '',
       password: '',
       passwordConfirm: '',
       show1: false,
       show2: false,
       error: '',
-      disabled: false
+      disabled: false,
+      dialog: false,
+      isEmail: false,
+      isPassword: false
     }
   },
   computed: {
@@ -91,6 +122,7 @@ export default {
         .get(`/v1/users/${this.currentUser.id}`)
         .then((res) => {
           this.email = res.data.email
+          this.originEmail = res.data.email
         })
     }
     if (this.currentUser) {
@@ -100,6 +132,15 @@ export default {
     }
   },
   methods: {
+    loginSuccess () {
+      if (this.isEmail) {
+        this.isEmail = false
+        this.changeUsersEmail()
+      } else if (this.isPassword) {
+        this.isPassword = false
+        this.changeUsersPassword()
+      }
+    },
     changeUsersEmail () {
       const user = firebase.auth().currentUser
       this.$store.commit('setLoading', true)
@@ -110,6 +151,7 @@ export default {
           })
           .then((res) => {
             this.$store.commit('setLoading', false)
+            this.originEmail = res.data.email
             this.$store.commit('setFlash', {
               status: true,
               message: 'メールアドレスを変更しました'
@@ -134,6 +176,33 @@ export default {
           })(error.code)
           this.$store.commit('setLoading', false)
         })
+    },
+    changeUsersPassword () {
+      const user = firebase.auth().currentUser
+      this.$store.commit('setLoading', true)
+      user.updatePassword(this.password).then(() => {
+        this.$store.commit('setLoading', false)
+        this.$store.commit('setFlash', {
+          status: true,
+          message: 'パスワードを変更しました'
+        })
+        this.password = ''
+        this.passwordConfirm = ''
+        setTimeout(() => {
+          this.$store.commit('setFlash', {})
+        }, 2000)
+      }).catch((error) => {
+        this.$store.commit('setLoading', false)
+        console.log(error)
+      })
+    },
+    openDialogForEmail () {
+      this.isEmail = true
+      this.dialog = true
+    },
+    openDialogForPassword () {
+      this.isPassword = true
+      this.dialog = true
     }
   }
 }
@@ -146,6 +215,7 @@ export default {
 
  .password-box {
    margin-top: 24px;
+   padding-top: 16px;
    border-top: 1px dashed#B3E5FC;
  }
 
