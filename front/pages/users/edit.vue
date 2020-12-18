@@ -125,7 +125,7 @@ export default {
           this.originEmail = res.data.email
         })
     }
-    if (this.currentUser) {
+    if (this.currentUser.id) {
       setDefaultData()
     } else {
       setTimeout(setDefaultData, 1000)
@@ -213,10 +213,9 @@ export default {
   font-size: 24px;
 }
 
- .password-box {
-   margin-top: 24px;
-   padding-top: 16px;
-   border-top: 1px dashed#B3E5FC;
- }
-
+.password-box {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px dashed#B3E5FC;
+}
 </style>
