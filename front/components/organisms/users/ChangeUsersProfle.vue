@@ -14,8 +14,8 @@
         <v-btn
           color="black lighten-3"
           class="white--text profile-message-btn"
-          @click="changeUsersProfile"
           :disabled="ObserverProps.invalid || !ObserverProps.validated"
+          @click="changeUsersProfile"
         >
           変更
         </v-btn>

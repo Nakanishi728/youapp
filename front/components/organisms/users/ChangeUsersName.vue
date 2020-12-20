@@ -13,8 +13,8 @@
         <v-btn
           color="black lighten-3"
           class="white--text"
-          @click="changeUsersName"
           :disabled="ObserverProps.invalid || !ObserverProps.validated"
+          @click="changeUsersName"
         >
           変更
         </v-btn>
