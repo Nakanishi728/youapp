@@ -6,7 +6,7 @@
       @closeDialog="dialog = false"
       @loginSuccess="loginSuccess"
     />
-    <v-card class="mx-auto mt-5 pa-5" width="800px">
+    <v-card class="mx-auto mt-5 pa-5" width="600px">
       <v-card-title>
         <h2 class="user-edit-title">
           ユーザー編集

@@ -1,5 +1,5 @@
 class V1::UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update]
+  before_action :set_user, only: %i[show edit update update_avatar]
 
   def index
     if params[:uid]
@@ -24,22 +24,24 @@ class V1::UsersController < ApplicationController
     end
   end
 
-  def edit
-    render json: @user
-  end
-
   def update
     if @user.update(user_params)
       render json: @user
     end
   end
 
-  private
-    def user_params
-      params.require(:user).permit(:email, :uid, :name, :profile)
-    end
+  def update_avatar
+    @user.avatar.attach(params[:avatar])
+    render json: @user
+  end
 
-    def set_user
-      @user = User.find(params[:id])
-    end
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :uid, :name, :profile, :avatar)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
