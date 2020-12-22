@@ -8,6 +8,9 @@
       </v-card-title>
       <v-card-text>
         <v-form>
+          <ChangeUsersAvater
+            rules="size:300"
+          />
           <ChangeUsersName
             v-model="name"
             label="名前"
@@ -29,16 +32,30 @@
 import axios from '@/plugins/axios'
 import ChangeUsersName from '~/components/organisms/users/ChangeUsersName.vue'
 import ChangeUsersProfile from '~/components/organisms/users/ChangeUsersProfle.vue'
+import ChangeUsersAvater from '~/components/organisms/users/ChangeUsersAvater.vue'
 
 export default {
   components: {
     ChangeUsersName,
-    ChangeUsersProfile
+    ChangeUsersProfile,
+    ChangeUsersAvater
+  },
+  fetch ({ store, redirect }) {
+    store.watch(
+      state => state.currentUser,
+      (newUser, oldUser) => {
+        if (!newUser) {
+          return redirect('/login')
+        }
+      }
+    )
   },
   data () {
     return {
       name: '',
-      profile: ''
+      profile: '',
+      avatar: '',
+      currentAvatarUrl: ''
     }
   },
   computed: {
@@ -53,6 +70,7 @@ export default {
         .then((res) => {
           this.name = res.data.name
           this.profile = res.data.profile
+          this.currentAvatarUrl = res.data.avatar_url
         })
     }
     if (this.currentUser.id) {
