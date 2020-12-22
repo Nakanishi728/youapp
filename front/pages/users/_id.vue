@@ -3,22 +3,35 @@
     <ErrorAnnounce
       :status="notFound"
     />
-    <p>
-      ユーザー名: {{ user.name }}
-    </p>
-    <p>
-      ID: {{ user.email }}
-    </p>
+    <div v-if="!notFound" class="my-page-box">
+      <v-row>
+        <v-col lg="4" md="4" sm="4" cols="12">
+          <UsersInfo
+            :user="user"
+          />
+          <UsersLinks />
+        </v-col>
+        <v-col lg="8" md="8" sm="8" cols="12">
+          <UsersContents />
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 
 <script>
 import axios from '@/plugins/axios'
 import ErrorAnnounce from '~/components/molecules/ErrorAnnounce.vue'
+import UsersInfo from '~/components/organisms/users/UsersInfo.vue'
+import UsersLinks from '~/components/organisms/users/UsersLinks.vue'
+import UsersContents from '~/components/organisms/users/UsersContents.vue'
 
 export default {
   components: {
-    ErrorAnnounce
+    ErrorAnnounce,
+    UsersInfo,
+    UsersLinks,
+    UsersContents
   },
   data () {
     return {

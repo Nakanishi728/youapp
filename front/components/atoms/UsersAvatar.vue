@@ -1,0 +1,31 @@
+<template>
+  <v-avatar
+    :size="size"
+  >
+    <img
+      v-if="user.avatar_url"
+      :src="user.avatar_url"
+      alt="Avatar"
+    >
+    <img
+      v-else
+      src="~/assets/image/default-icon.png"
+      alt="Avatar"
+    >
+  </v-avatar>
+</template>
+
+<script>
+export default {
+  props: {
+    size: {
+      type: Number,
+      required: true
+    },
+    value: {
+      user: Object,
+      required: true
+    }
+  }
+}
+</script>
