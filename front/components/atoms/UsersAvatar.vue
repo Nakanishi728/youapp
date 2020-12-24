@@ -22,9 +22,9 @@ export default {
       type: Number,
       required: true
     },
-    value: {
-      user: Object,
-      required: true
+    user: {
+      type: Object,
+      required: false
     }
   }
 }
