@@ -93,12 +93,11 @@ export default {
       this.$store.commit('setLoading', true)
       const formData = new FormData()
       formData.append('avatar', this.avatar)
-      const config = {
-        headers: {
-          'content-type': 'multipart/form-data'
-        }
+      const headers = {
+        'content-type': 'multipart/form-data'
       }
-      axios.patch(`/v1/users/${this.currentUser.id}/update_avatar`, formData, config)
+      axios
+        .patch(`/v1/users/${this.currentUser.id}/update_avatar`, formData, { headers })
         .then((res) => {
           this.avatar = res.data.avatar
           this.$store.commit('setUserAvatarUrl', res.data.avatar_url)
@@ -110,6 +109,10 @@ export default {
           setTimeout(() => {
             this.$store.commit('setFlash', {})
           }, 2000)
+        })
+        .catch((error) => {
+          this.$store.commit('setLoading', false)
+          console.log(error)
         })
     }
   }
