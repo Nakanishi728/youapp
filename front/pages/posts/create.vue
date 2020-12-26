@@ -1,5 +1,6 @@
 <template>
   <v-card class="mx-auto mt-5 pa-5" width="600px">
+    <LoggedInNavDrawer />
     <v-card-title>
       <h2 class="create-post-h2">
         投稿(シェア)
@@ -10,7 +11,7 @@
         <div class="create-post-box">
           <TextField
             v-model="title"
-            label="タイトル"
+            label="例) Rails+Docker+Nuxt (短的に分かりやすく)"
             rules="max:80|required"
           />
           <AddLink
@@ -22,7 +23,7 @@
           />
           <TextArea
             v-model="point"
-            label="説明"
+            label="例) ログイン機能実装の参考になりました (自身の体験を踏まえて)"
             rules="max:140|required"
             :counter="140"
           />
@@ -44,12 +45,14 @@
 
 <script>
 import axios from '@/plugins/axios'
+import LoggedInNavDrawer from '~/components/organisms/loggedIn/LoggedInNavDrawer.vue'
 import AddLink from '~/components/molecules/AddLink.vue'
 import TextField from '~/components/atoms/TextField.vue'
 import TextArea from '~/components/atoms/TextArea.vue'
 
 export default {
   components: {
+    LoggedInNavDrawer,
     AddLink,
     TextField,
     TextArea

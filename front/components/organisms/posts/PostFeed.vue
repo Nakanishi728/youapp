@@ -1,5 +1,10 @@
 <template>
   <div>
+    <v-card class="mx-auto mt-4 pa-3" width="600px">
+      <v-card-title>
+        投稿一覧
+      </v-card-title>
+    </v-card>
     <Post
       v-for="(post, $index) in posts"
       :key="$index"
