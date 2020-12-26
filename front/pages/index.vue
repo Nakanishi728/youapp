@@ -1,8 +1,16 @@
 <template>
-  <p>Hello Nuxt.js</p>
+  <div>
+    <p>index.vue</p>
+    <PostFeed />
+  </div>
 </template>
 
 <script>
+import PostFeed from '~/components/organisms/posts/PostFeed.vue'
+
 export default {
+  components: {
+    PostFeed
+  }
 }
 </script>
