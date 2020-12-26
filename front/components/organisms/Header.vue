@@ -12,20 +12,6 @@
     </v-toolbar-title>
     <v-spacer />
     <div class="header-list">
-      <div v-if="currentUser" class="after-login-box">
-        <v-btn
-          to="/posts/create"
-          class="mr-2"
-          color="white"
-          :outlined="true"
-          small
-        >
-          <v-icon small>
-            mdi-fountain-pen-tip
-          </v-icon>
-          シェア
-        </v-btn>
-      </div>
       <div v-if="!loggedIn" class="before-login-box">
         <v-btn
           v-if="!currentUser"
@@ -56,7 +42,7 @@
         >
           <template v-slot:activator="{on, attrs}">
             <v-avatar
-              size="32"
+              size="40"
             >
               <img
                 v-if="currentUser.avatar_url"
@@ -77,6 +63,17 @@
           <v-list
             dense
           >
+          <v-subheader>
+            ログイン中のユーザー
+          </v-subheader>
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-subtitle>
+                {{ this.$store.state.currentUser.name }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+          <v-divider />
             <v-list-item
               v-for="(link, l) in links"
               :key="l"
@@ -106,7 +103,7 @@ import firebase from '@/plugins/firebase'
 export default {
   data () {
     return {
-      appName: 'Part t mana'
+      appName: 'PUSHAR'
     }
   },
   computed: {

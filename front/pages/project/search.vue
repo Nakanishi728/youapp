@@ -1,17 +1,17 @@
 <template>
   <div>
     <LoggedInNavDrawer />
-    <PostFeed />
+    <p>
+      検索機能
+    </p>
   </div>
 </template>
 
 <script>
-import PostFeed from '~/components/organisms/posts/PostFeed.vue'
 import LoggedInNavDrawer from '~/components/organisms/loggedIn/LoggedInNavDrawer.vue'
 
 export default {
   components: {
-    PostFeed,
     LoggedInNavDrawer
   }
 }

@@ -5,15 +5,10 @@
     class="my-app-log"
   >
     <span class="white--text text-subtitle-2">
-      Pam
+      Pus
     </span>
   </v-avatar>
 </template>
-
-<script>
-export default {
-}
-</script>
 
 <style lang="scss" scoped>
 .my-app-log {

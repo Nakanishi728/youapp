@@ -8,6 +8,7 @@
         {{ post.title }}
       </n-link>
     </v-card-title>
+    <v-divider />
     <v-card-text>
       <UsersLink
         :user="user"
