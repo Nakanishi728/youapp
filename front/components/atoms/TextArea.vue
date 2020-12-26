@@ -22,11 +22,11 @@ export default {
   props: {
     rules: {
       type: [Object, String],
-      default: ''
+      required: true
     },
     value: {
       type: null,
-      default: ''
+      required: true
     }
   },
   data () {
