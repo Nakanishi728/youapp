@@ -22,8 +22,8 @@ export default {
       type: Number,
       required: true
     },
-    value: {
-      user: Object,
+    user: {
+      type: Object,
       required: true
     }
   }

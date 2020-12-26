@@ -12,6 +12,20 @@
     </v-toolbar-title>
     <v-spacer />
     <div class="header-list">
+      <div v-if="currentUser" class="after-login-box">
+        <v-btn
+          to="/posts/create"
+          class="mr-2"
+          color="white"
+          :outlined="true"
+          small
+        >
+          <v-icon small>
+            mdi-fountain-pen-tip
+          </v-icon>
+          シェア
+        </v-btn>
+      </div>
       <div v-if="!loggedIn" class="before-login-box">
         <v-btn
           v-if="!currentUser"

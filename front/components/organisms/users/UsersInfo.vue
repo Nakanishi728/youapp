@@ -2,18 +2,10 @@
   <v-card class="user-info-box">
     <v-card-text>
       <v-row justify="center">
-        <v-avatar>
-          <img
-            v-if="user.avatar_url"
-            :src="user.avatar_url"
-            alt="Avatar"
-          >
-          <img
-            v-else
-            src="~/assets/image/default-icon.png"
-            alt="Avatar"
-          >
-        </v-avatar>
+        <UsersAvatar
+          :size="62"
+          :user="user"
+        />
       </v-row>
       <v-row justify="center">
         <p class="user-info-box-name">
@@ -30,7 +22,12 @@
 </template>
 
 <script>
+import UsersAvatar from '~/components/atoms/UsersAvatar.vue'
+
 export default {
+  components: {
+    UsersAvatar
+  },
   props: {
     user: {
       type: Object,
@@ -45,5 +42,10 @@ export default {
   padding-top: 12px;
   font-size: 18px;
   font-weight: bold;
+}
+
+.user-info-box-profile {
+  width: 90%;
+  margin: 0 auto;
 }
 </style>
