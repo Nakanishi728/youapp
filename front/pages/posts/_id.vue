@@ -1,5 +1,6 @@
 <template>
   <div class="posts-id">
+    <LoggedInNavDrawer />
     <ErrorAnnounce
       :status="notFound"
     />

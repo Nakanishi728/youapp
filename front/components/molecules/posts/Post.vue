@@ -16,16 +16,23 @@
       <div class="post-index-point mt-2">
         {{ post.point }}
       </div>
+      <LikeButton
+        v-if="currentUser"
+        :user="post.user"
+        :post="post"
+      />
     </v-card-text>
   </v-card>
 </template>
 
 <script>
 import UsersLink from '~/components/molecules/UsersLink.vue'
+import LikeButton from '~/components/atoms/LikeButton.vue'
 
 export default {
   components: {
-    UsersLink
+    UsersLink,
+    LikeButton
   },
   props: {
     post: {
@@ -35,6 +42,11 @@ export default {
     user: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    currentUser () {
+      return this.$store.state.currentUser
     }
   }
 }
