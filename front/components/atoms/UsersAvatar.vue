@@ -7,11 +7,14 @@
       :src="user.avatar_url"
       alt="Avatar"
     >
-    <img
+    <v-icon
       v-else
-      src="~/assets/image/default-icon.png"
-      alt="Avatar"
+      size="62"
+      color="light-blue"
+      alt="Avater"
     >
+      mdi-account-circle
+    </v-icon>
   </v-avatar>
 </template>
 
