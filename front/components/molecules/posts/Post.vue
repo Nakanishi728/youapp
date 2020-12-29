@@ -17,6 +17,7 @@
         {{ post.point }}
       </div>
       <LikeButton
+        v-if="currentUser"
         :user="post.user"
         :post="post"
       />
@@ -41,6 +42,11 @@ export default {
     user: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    currentUser () {
+      return this.$store.state.currentUser
     }
   }
 }
