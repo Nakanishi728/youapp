@@ -13,6 +13,11 @@
       <UsersLink
         :user="user"
       />
+      <PostLinkCard
+        v-for="link in post.links"
+        :key="link.id"
+        :link="link"
+      />
       <div class="post-index-point mt-2">
         {{ post.point }}
       </div>
@@ -27,11 +32,13 @@
 
 <script>
 import UsersLink from '~/components/molecules/UsersLink.vue'
+import PostLinkCard from '~/components/molecules/PostLinkCard.vue'
 import LikeButton from '~/components/atoms/LikeButton.vue'
 
 export default {
   components: {
     UsersLink,
+    PostLinkCard,
     LikeButton
   },
   props: {

@@ -10,9 +10,6 @@
     </v-card-title>
     <v-divider />
     <v-card-text>
-      <UsersLink
-        :user="user"
-      />
       <div class="post-index-point mt-2">
         {{ like.post.point }}
       </div>
@@ -35,12 +32,8 @@
 
 <script>
 import axios from '@/plugins/axios'
-import UsersLink from '~/components/molecules/UsersLink.vue'
 
 export default {
-  components: {
-    UsersLink
-  },
   props: {
     like: {
       type: Object,
