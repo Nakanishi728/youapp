@@ -42,7 +42,7 @@
       <v-list-item>
         <v-list-item-icon>
           <v-icon>
-            mdi-file-search-outline
+            mdi-magnify
           </v-icon>
         </v-list-item-icon>
         <v-list-item-content>

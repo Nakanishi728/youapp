@@ -19,11 +19,14 @@
             :src="value"
             alt="Avater"
           >
-          <img
+          <v-icon
             v-else
-            src="~/assets/image/default-icon.png"
+            size="62"
+            color="light-blue"
             alt="Avater"
           >
+            mdi-account-circle
+          </v-icon>
         </v-avatar>
       </v-row>
       <FileInput
