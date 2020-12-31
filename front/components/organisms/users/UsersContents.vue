@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card class="user-contents-box">
     <v-card-title>
       <h2>ユーザーコンテンツ</h2>
     </v-card-title>

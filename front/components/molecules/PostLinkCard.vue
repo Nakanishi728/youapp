@@ -2,7 +2,7 @@
   <div class="link-box">
     <v-card
       max-width="600px"
-      color="light-blue lighten-2"
+      color="blue lighten-2"
       style="color:white;"
     >
       <v-card-actions>
