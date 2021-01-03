@@ -17,21 +17,42 @@
           {{ user.profile }}
         </div>
       </v-row>
+      <v-row justify="center">
+        <div class="user-follow-box">
+          <UsersFollowList
+            :follow="follow"
+            :follower="follower"
+          />
+          <UsersFollow />
+        </div>
+      </v-row>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
 import UsersAvatar from '~/components/atoms/UsersAvatar.vue'
+import UsersFollow from '~/components/molecules/users/UsersFollow.vue'
+import UsersFollowList from '~/components/molecules/users/UsersFollowList.vue'
 
 export default {
   components: {
-    UsersAvatar
+    UsersAvatar,
+    UsersFollow,
+    UsersFollowList
   },
   props: {
     user: {
       type: Object,
       required: true
+    },
+    follow: {
+      type: [Object, Array],
+      default: () => {}
+    },
+    follower: {
+      type: [Object, Array],
+      default: () => {}
     }
   }
 }

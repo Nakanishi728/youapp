@@ -8,6 +8,8 @@
         <v-col lg="4" md="4" sm="4" cols="12">
           <UsersInfo
             :user="user"
+            :follow="follow"
+            :follower="follower"
           />
           <UsersLinks />
         </v-col>
@@ -42,6 +44,8 @@ export default {
   data () {
     return {
       user: {},
+      follow: {},
+      follower: {},
       notFound: false
     }
   },
@@ -56,6 +60,28 @@ export default {
       .then((res) => {
         const user = res.data
         this.user = user
+      })
+      .catch((error) => {
+        if (error.response.status === 404) {
+          this.notFound = true
+        }
+      })
+    axios
+      .get(`/v1/users/${this.$route.params.id}/following`)
+      .then((res) => {
+        const follow = res.data
+        this.follow = follow
+      })
+      .catch((error) => {
+        if (error.response.status === 404) {
+          this.notFound = true
+        }
+      })
+    axios
+      .get(`/v1/users/${this.$route.params.id}/followers`)
+      .then((res) => {
+        const follower = res.data
+        this.follower = follower
       })
       .catch((error) => {
         if (error.response.status === 404) {

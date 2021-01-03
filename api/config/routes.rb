@@ -3,10 +3,12 @@ Rails.application.routes.draw do
     resources :users do
       member do
         patch '/update_avatar', to: 'users#update_avatar'
+        get :following, :followers
       end
     end
     resources :posts
     resources :likes, only: [:index, :create, :destroy]
+    resources :relationships, only: [:create, :destroy]
   end
  end
  
