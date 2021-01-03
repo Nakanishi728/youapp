@@ -4,15 +4,3 @@
     <PostFeed />
   </div>
 </template>
-
-<script>
-import PostFeed from '~/components/organisms/posts/PostFeed.vue'
-import LoggedInNavDrawer from '~/components/organisms/loggedIn/LoggedInNavDrawer.vue'
-
-export default {
-  components: {
-    PostFeed,
-    LoggedInNavDrawer
-  }
-}
-</script>

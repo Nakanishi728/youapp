@@ -2,6 +2,7 @@
   <v-navigation-drawer
     v-if="currentUser"
     app
+    clipped
     mobile-breakpoint="960"
   >
     <v-list>

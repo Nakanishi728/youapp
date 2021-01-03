@@ -2,7 +2,7 @@
   <v-app-bar
     app
     dark
-    fixed
+    clipped-left
   >
     <n-link to="/" style="text-decoration:none;">
       <AppLogo />
