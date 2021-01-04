@@ -5,7 +5,6 @@
       :user="user"
     />
     <nuxt-link
-      class="nuxt-link"
       :to="`/users/${user.id}`"
       style="color:#37474F;"
     >

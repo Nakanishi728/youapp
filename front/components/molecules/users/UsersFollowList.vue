@@ -1,23 +1,42 @@
 <template>
   <div class="follow-list">
-    <FollowList
+    <FollowListDialog
       :follow="follow"
+      :dialog="dialog"
+      @closeDialog="dialog = false"
     />
-    <FollowerList
+    <FollowerListDialog
       :follower="follower"
+      :followerdialog="followerdialog"
+      @followercloseDialog="followerdialog = false"
     />
+    <div class="px-4 py-3">
+      <h4
+        style="cursor:pointer"
+        @click="dialog = !dialog"
+      >
+        フォロー
+      </h4>
+      <v-row justify="center">
+        {{ follow.length }}
+      </v-row>
+    </div>
+    <div class="px-4 py-3">
+      <h4
+        style="cursor:pointer"
+        @click="followerdialog = !followerdialog"
+      >
+        フォロワー
+      </h4>
+      <v-row justify="center">
+        {{ follower.length }}
+      </v-row>
+    </div>
   </div>
 </template>
 
 <script>
-import FollowList from '~/components/atoms/FollowList.vue'
-import FollowerList from '~/components/atoms/FollowerList.vue'
-
 export default {
-  components: {
-    FollowList,
-    FollowerList
-  },
   props: {
     follow: {
       type: [Object, Array],
@@ -26,6 +45,12 @@ export default {
     follower: {
       type: [Object, Array],
       default: () => {}
+    }
+  },
+  data () {
+    return {
+      dialog: false,
+      followerdialog: false
     }
   }
 }
