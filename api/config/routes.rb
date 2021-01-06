@@ -6,9 +6,10 @@ Rails.application.routes.draw do
         get :following, :followers
       end
     end
-    resources :posts
+    resources :posts, only: [:index, :show, :create, :update, :destroy]
     resources :likes, only: [:index, :create, :destroy]
-    resources :relationships, only: [:create, :destroy]
+    resources :relationships, only: [:create]
+    delete 'relationships', to: 'relationships#destroy'
   end
  end
  

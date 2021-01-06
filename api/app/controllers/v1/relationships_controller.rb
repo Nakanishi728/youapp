@@ -8,8 +8,8 @@ class V1::RelationshipsController < ApplicationController
   end
 
   def destroy
-    @user = Relationship.find(params[:id]).following
-    current_user = User.find_by(id: params[:id])
+    @user = User.find(params[:following_id])
+    current_user = User.find_by(id: params[:follower_id])
     current_user.unfollow!(@user)
   end
 

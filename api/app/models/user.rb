@@ -13,16 +13,11 @@ class User < ApplicationRecord
     avatar.attached? ?  url_for(avatar) : nil
   end
 
-  def following?(other_user)
-    following_relationships.find_by(following_id: other_user.id)
-  end
-
   def follow!(other_user)
     following_relationships.create!(following_id: other_user.id)
   end
 
   def unfollow!(other_user)
-    relationship = following_relationships.find_by(following_id: other_user.id)
-    relationship.destroy
+    following_relationships.find_by(following_id: other_user.id).destroy
   end
 end

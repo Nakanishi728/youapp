@@ -23,7 +23,10 @@
             :follow="follow"
             :follower="follower"
           />
-          <UsersFollow />
+          <UsersFollow
+            :user="user"
+            :follower="follower"
+          />
         </div>
       </v-row>
     </v-card-text>
@@ -31,16 +34,7 @@
 </template>
 
 <script>
-import UsersAvatar from '~/components/atoms/UsersAvatar.vue'
-import UsersFollow from '~/components/molecules/users/UsersFollow.vue'
-import UsersFollowList from '~/components/molecules/users/UsersFollowList.vue'
-
 export default {
-  components: {
-    UsersAvatar,
-    UsersFollow,
-    UsersFollowList
-  },
   props: {
     user: {
       type: Object,
@@ -53,6 +47,11 @@ export default {
     follower: {
       type: [Object, Array],
       default: () => {}
+    }
+  },
+  computed: {
+    currentUser () {
+      return this.$store.state.currentUser
     }
   }
 }
