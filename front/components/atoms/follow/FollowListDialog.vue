@@ -7,7 +7,7 @@
     <v-card width="500px" class="mx-auto">
       <v-toolbar flat>
         <v-toolbar-title>
-          フォロー
+          現在フォロー中のユーザー
         </v-toolbar-title>
         <v-spacer />
         <v-btn
@@ -17,10 +17,6 @@
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-toolbar>
-      <v-divider />
-      <v-card-title>
-        現在フォロー中のユーザー
-      </v-card-title>
       <v-list>
         <v-list-item
           v-for="f in follow"
@@ -32,6 +28,7 @@
                 v-if="f.avatar_url"
                 :src="f.avatar_url"
                 size="40"
+                style="margin-bottom:15px;"
                 alt="Avatar"
               >
               <v-icon
