@@ -18,31 +18,31 @@
         </v-btn>
       </v-toolbar>
       <v-form>
-        <ValidationObserver ref="obs" v-slot="{ invalid }">
-          <div class="post-edit-box mt-2 pa-3">
+        <ValidationObserver ref="obs" v-slot="ObserverProps">
+          <div class="mt-2 pa-3">
             <TextField
-              v-model="viewTitle"
-              label="タイトル"
-              rules="max:50|required"
+              v-model="title"
+              label="例) Rails+Docker+Nuxt (短的に分かりやすく)"
+              rules="max:80|required"
             />
             <AddLink
               rules="regex:https?://([\w-]+\.)+[\w-]+(/[\w- .?%&=]*)?"
               label="URL"
-              :firstUrl.sync="firstUrl"
-              :secondUrl.sync="secondUrl"
-              :thirdUrl.sync="thirdUrl"
+              :first-url.sync="firstUrl"
+              :second-url.sync="secondUrl"
+              :third-url.sync="thirdUrl"
             />
             <TextArea
-              v-model="viewPoint"
-              label="説明"
+              v-model="point"
+              label="例) ログイン機能実装の参考になりました (自身の体験を踏まえて)"
               rules="max:140|required"
               :counter="140"
             />
             <v-row justify="center">
               <v-btn
-                color="light-blue lighten-3"
-                class="white--text"
-                :disabled="invalid"
+                color="white lighten-3"
+                class="black--text"
+                :disabled="ObserverProps.invalid || !ObserverProps.validated"
                 @click="updatePost"
               >
                 編集
@@ -57,46 +57,31 @@
 
 <script>
 import axios from '@/plugins/axios'
-import TextField from '~/components/atoms/TextField.vue'
-import TextArea from '~/components/atoms/TextArea.vue'
-import AddLink from '~/components/molecules/AddLink.vue'
 
 export default {
-  components: {
-    TextField,
-    TextArea,
-    AddLink
-  },
   props: {
     dialog: {
       type: Boolean,
-      required: true
-    },
-    title: {
-      type: String,
-      required: true
-    },
-    links: {
-      type: Array,
-      required: true
-    },
-    point: {
-      type: String,
-      required: true
-    },
-    currentUser: {
-      type: null,
       required: true
     }
   },
   data () {
     return {
       dialogStatus: this.dialog,
-      patchForTitle: '',
-      patchForPoint: '',
-      patchForTFirstUrl: '',
-      patchForTSecondUrl: '',
-      patchForTThirdUrl: ''
+      title: '',
+      point: '',
+      firstUrl: '',
+      secondUrl: '',
+      thirdUrl: ''
+    }
+  },
+  computed: {
+    currentUser () {
+      return this.$store.state.currentUser
+    },
+    links () {
+      const links = [this.firstUrl, this.secondUrl, this.thirdUrl]
+      return links
     }
   },
   watch: {
@@ -104,18 +89,28 @@ export default {
       this.dialogStatus = newValue
     }
   },
+  mounted () {
+    axios
+      .get(`/v1/posts/${this.$route.params.id}`)
+      .then((res) => {
+        this.title = res.data.title
+        this.point = res.data.point
+      })
+      .catch((error) => {
+        if (error.response.status === 404) {
+          this.notFound = true
+        }
+      })
+  },
   methods: {
-    closeDialog () {
-      this.$emit('closeDialog')
-    },
     updatePost () {
       this.$store.commit('setLoading', true)
       axios
         .patch(`/v1/posts/${this.$route.params.id}`, {
-          title: this.patchForTitle,
+          title: this.title,
           user_id: this.currentUser.id,
-          links: this.editLinks,
-          point: this.patchForPoint
+          links: this.links,
+          point: this.point
         })
         .then((res) => {
           this.$store.commit('setLoading', false)
@@ -126,8 +121,11 @@ export default {
           setTimeout(() => {
             this.$store.commit('setFlash', {})
           }, 2000)
-          this.$router.replace('/')
+          this.$router.replace(`/users/${this.$store.state.currentUser.id}`)
         })
+    },
+    closeDialog () {
+      this.$emit('closeDialog')
     }
   }
 }

@@ -50,7 +50,7 @@
           <n-link
             to="/project/search"
           >
-             検索
+            検索
           </n-link>
         </v-list-item-content>
       </v-list-item>
@@ -95,7 +95,7 @@
           <n-link
             to="/project/help"
           >
-             各機能説明
+            各機能説明
           </n-link>
         </v-list-item-content>
       </v-list-item>

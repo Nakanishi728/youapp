@@ -79,7 +79,7 @@ export default {
       }
       const re = new RegExp(searchWord, 'ig')
       return text.replace(re, function (search) {
-        return '<span style="background-color:lightblue;font-weight:bold">' + search + '</span>'
+        return search
       })
     }
   }

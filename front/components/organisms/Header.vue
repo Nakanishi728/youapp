@@ -155,9 +155,6 @@ export default {
           }, 1500)
           this.$router.push('/login')
         })
-        .catch((error) => {
-          console.log(error)
-        })
     }
   }
 }

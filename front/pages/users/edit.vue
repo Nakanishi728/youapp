@@ -205,9 +205,6 @@ export default {
         setTimeout(() => {
           this.$store.commit('setFlash', {})
         }, 2000)
-      }).catch((error) => {
-        this.$store.commit('setLoading', false)
-        console.log(error)
       })
     },
     destroyUser () {
@@ -227,8 +224,6 @@ export default {
             }, 2000)
             this.$router.push('/')
           })
-      }).catch(function (error) {
-        console.log(error)
       })
     },
     openDialogForEmail () {

@@ -17,9 +17,9 @@
           <AddLink
             rules="regex:https?://([\w-]+\.)+[\w-]+(/[\w- .?%&=]*)?"
             label="URL"
-            :firstUrl.sync="firstUrl"
-            :secondUrl.sync="secondUrl"
-            :thirdUrl.sync="thirdUrl"
+            :first-url.sync="firstUrl"
+            :second-url.sync="secondUrl"
+            :third-url.sync="thirdUrl"
           />
           <TextArea
             v-model="point"

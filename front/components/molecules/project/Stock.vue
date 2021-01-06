@@ -38,10 +38,6 @@ export default {
     like: {
       type: Object,
       default: () => {}
-    },
-    user: {
-      type: Object,
-      required: true
     }
   },
   data () {

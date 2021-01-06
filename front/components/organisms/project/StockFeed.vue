@@ -3,7 +3,6 @@
     <Stock
       v-for="like in likes"
       :key="like.id"
-      :user="like.user"
       :like="like"
     />
   </div>
