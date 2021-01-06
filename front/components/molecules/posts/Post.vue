@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto mt-4 pa-3" width="600px">
+  <v-card class="mx-auto mt-4" width="600px">
     <v-card-title class="py-2">
       <n-link
         :to="`/posts/${post.id}`"
@@ -31,16 +31,7 @@
 </template>
 
 <script>
-import UsersLink from '~/components/molecules/UsersLink.vue'
-import PostLinkCard from '~/components/molecules/PostLinkCard.vue'
-import LikeButton from '~/components/atoms/LikeButton.vue'
-
 export default {
-  components: {
-    UsersLink,
-    PostLinkCard,
-    LikeButton
-  },
   props: {
     post: {
       type: Object,

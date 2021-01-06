@@ -75,9 +75,6 @@ export default {
     }
   },
   methods: {
-    attachImg () {
-      console.log(this.avatar)
-    },
     onImagePicked (file) {
       if (file !== undefined && file !== null) {
         if (file.name.lastIndexOf('.') <= 0) {
@@ -112,10 +109,6 @@ export default {
           setTimeout(() => {
             this.$store.commit('setFlash', {})
           }, 2000)
-        })
-        .catch((error) => {
-          this.$store.commit('setLoading', false)
-          console.log(error)
         })
     }
   }

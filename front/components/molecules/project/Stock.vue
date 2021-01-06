@@ -22,7 +22,7 @@
             color="black lighten-3"
             @click="deleteLike"
           >
-            <v-icon>mdi-close-outline</v-icon>
+            <v-icon>mdi-minus</v-icon>
           </v-btn>
         </div>
       </div>
@@ -38,10 +38,6 @@ export default {
     like: {
       type: Object,
       default: () => {}
-    },
-    user: {
-      type: Object,
-      required: true
     }
   },
   data () {

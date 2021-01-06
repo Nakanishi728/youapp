@@ -17,21 +17,41 @@
           {{ user.profile }}
         </div>
       </v-row>
+      <v-row justify="center">
+        <div class="user-follow-box">
+          <UsersFollowList
+            :follow="follow"
+            :follower="follower"
+          />
+          <UsersFollow
+            :user="user"
+            :follower="follower"
+          />
+        </div>
+      </v-row>
     </v-card-text>
   </v-card>
 </template>
 
 <script>
-import UsersAvatar from '~/components/atoms/UsersAvatar.vue'
-
 export default {
-  components: {
-    UsersAvatar
-  },
   props: {
     user: {
       type: Object,
       required: true
+    },
+    follow: {
+      type: [Object, Array],
+      default: () => {}
+    },
+    follower: {
+      type: [Object, Array],
+      default: () => {}
+    }
+  },
+  computed: {
+    currentUser () {
+      return this.$store.state.currentUser
     }
   }
 }

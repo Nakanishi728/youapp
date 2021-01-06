@@ -8,7 +8,7 @@
         color="green lighten-3"
         @click="registerLike"
       >
-        <v-icon>mdi-arrow-down-bold-box-outline</v-icon>
+        <v-icon>mdi-plus</v-icon>
       </v-btn>
     </div>
   </div>
@@ -55,24 +55,6 @@ export default {
             this.$store.commit('setFlash', {})
           }, 2000)
           this.$router.replace('/project/stock')
-        })
-    },
-    deleteLike () {
-      axios
-        .delete('/v1/likes/', {
-          user_id: this.currentUser.id,
-          post_id: this.post.id
-        })
-        .then((res) => {
-          this.$store.commit('setLoading', false)
-          this.$store.commit('setFlash', {
-            status: true,
-            message: 'ストックから削除しました'
-          })
-          setTimeout(() => {
-            this.$store.commit('setFlash', {})
-          }, 2000)
-          this.$router.replace('/')
         })
     }
   }

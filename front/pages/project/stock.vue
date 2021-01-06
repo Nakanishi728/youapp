@@ -11,12 +11,10 @@
 </template>
 
 <script>
-import LoggedInNavDrawer from '~/components/organisms/loggedIn/LoggedInNavDrawer.vue'
 import StockFeed from '~/components/organisms/project/StockFeed.vue'
 
 export default {
   components: {
-    LoggedInNavDrawer,
     StockFeed
   }
 }

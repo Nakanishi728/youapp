@@ -55,18 +55,8 @@
 
 <script>
 import axios from '@/plugins/axios'
-import ErrorAnnounce from '~/components/molecules/ErrorAnnounce.vue'
-import LinkCard from '~/components/molecules/LinkCard.vue'
-import UsersLink from '~/components/molecules/UsersLink.vue'
-import PostEditDialog from '~/components/organisms/PostEditDialog.vue'
 
 export default {
-  components: {
-    ErrorAnnounce,
-    LinkCard,
-    UsersLink,
-    PostEditDialog
-  },
   data () {
     return {
       user: {},
@@ -114,7 +104,7 @@ export default {
           setTimeout(() => {
             this.$store.commit('setFlash', {})
           }, 2000)
-          this.$router.push('/')
+          this.$router.replace('/')
         })
     }
   }

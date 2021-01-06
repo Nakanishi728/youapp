@@ -17,9 +17,9 @@
           <AddLink
             rules="regex:https?://([\w-]+\.)+[\w-]+(/[\w- .?%&=]*)?"
             label="URL"
-            :firstUrl.sync="firstUrl"
-            :secondUrl.sync="secondUrl"
-            :thirdUrl.sync="thirdUrl"
+            :first-url.sync="firstUrl"
+            :second-url.sync="secondUrl"
+            :third-url.sync="thirdUrl"
           />
           <TextArea
             v-model="point"
@@ -45,18 +45,8 @@
 
 <script>
 import axios from '@/plugins/axios'
-import LoggedInNavDrawer from '~/components/organisms/loggedIn/LoggedInNavDrawer.vue'
-import AddLink from '~/components/molecules/AddLink.vue'
-import TextField from '~/components/atoms/TextField.vue'
-import TextArea from '~/components/atoms/TextArea.vue'
 
 export default {
-  components: {
-    LoggedInNavDrawer,
-    AddLink,
-    TextField,
-    TextArea
-  },
   fetch ({ store, redirect }) {
     store.watch(
       state => state.currentUser,

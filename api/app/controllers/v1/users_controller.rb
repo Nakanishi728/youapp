@@ -1,5 +1,5 @@
 class V1::UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update update_avatar destroy]
+  before_action :set_user, only: %i[show edit update update_avatar destroy following followers]
 
   def index
     if params[:uid]
@@ -33,6 +33,16 @@ class V1::UsersController < ApplicationController
   def update_avatar
     @user.avatar.attach(params[:avatar])
     render json: @user
+  end
+
+  def following
+    @users = @user.followings
+    render json: @users
+  end
+
+  def followers
+    @users = @user.followers
+    render json: @users
   end
 
   def destroy

@@ -17,6 +17,7 @@
     "firebase": "^8.1.2",
     "loaders.css": "^0.1.2",
     "nuxt": "^2.14.6",
+    "sanitize-html": "^2.3.0",
     "vee-validate": "3.3.0"
   },
   "devDependencies": {

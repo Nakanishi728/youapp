@@ -1,8 +1,8 @@
 <template>
-  <div class="link-box">
+  <div class="link-box mt-2">
     <v-card
       max-width="600px"
-      color="light-blue lighten-2"
+      color="blue lighten-2"
       style="color:white;"
     >
       <v-card-actions>
@@ -56,9 +56,3 @@ export default {
   }
 }
 </script>
-
-<style type="scoped">
-.link-box {
-  margin-top: 24px;
-}
-</style>

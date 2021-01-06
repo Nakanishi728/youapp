@@ -1,7 +1,7 @@
 class V1::LikesController < ApplicationController
 
   def index
-    @likes = Like.filter_by_post(params[:post_id]).select(:id, :user_id, :post_id)
+    @likes = Like.filter_by_post(params[:post_id]).select(:id, :user_id, :post_id).order("created_at DESC")
 
     render json: @likes
   end
