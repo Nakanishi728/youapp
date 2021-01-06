@@ -10,6 +10,11 @@ class V1::PostsController < ApplicationController
     render json: @posts
   end
 
+  def postlists
+    @posts = Post.where(user_id: params[:id]).limit(20).order("created_at DESC")
+    render json: @posts
+  end
+
   def show
     render json: @post
   end

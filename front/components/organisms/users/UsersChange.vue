@@ -1,11 +1,8 @@
 <template>
-  <v-card class="user-change-box">
+  <v-card>
     <v-card-title>
-      <h2>ユーザーチェンジボタン</h2>
+      何か入る
     </v-card-title>
-    <v-card-text>
-      <p>ここはユーザーチェンジボタンです</p>
-    </v-card-text>
   </v-card>
 </template>
 
@@ -13,9 +10,3 @@
 export default {
 }
 </script>
-
-<style>
-.user-change-box {
-  margin-top: 0;
-}
-</style>

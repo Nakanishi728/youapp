@@ -1,11 +1,22 @@
 <template>
-  <v-card class="user-pickup-box">
+  <v-card class="mx-auto mt-4">
     <v-card-title>
-      <h2>ユーザーピックアップ</h2>
+      <v-icon
+        color="blue lighten-1"
+      >
+        mdi-xml
+      </v-icon>
+      <h4>
+        ピックアップURL
+      </h4>
     </v-card-title>
-    <v-card-text>
-      <p>ここはユーザーピックアップです</p>
-    </v-card-text>
+    <v-list-item>
+      <v-list-item-content>
+        <v-card-text>
+          コンテンツ
+        </v-card-text>
+      </v-list-item-content>
+    </v-list-item>
   </v-card>
 </template>
 
@@ -13,9 +24,3 @@
 export default {
 }
 </script>
-
-<style>
-.user-pickup-box {
-  margin: 24px auto;
-}
-</style>

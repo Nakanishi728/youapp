@@ -13,7 +13,7 @@
     />
     <v-row justify="center">
       <v-btn
-        v-if="morePost> 20"
+        v-if="morePost > 20"
         color="light-blue lighten-2"
         class="mt-4 white--text more-loading"
         @click="moreLoading"
@@ -26,12 +26,8 @@
 
 <script>
 import axios from '@/plugins/axios'
-import Post from '~/components/molecules/posts/Post.vue'
 
 export default {
-  components: {
-    Post
-  },
   data () {
     return {
       postCount: 0,
