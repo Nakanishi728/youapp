@@ -14,8 +14,12 @@
       <table>
         <thead>
           <tr>
-            <th>URLタイトル</th>
-            <th>URL詳細</th>
+            <th style="width:20%;">
+              URLタイトル
+            </th>
+            <th style="width:80%;">
+              URL詳細
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -23,10 +27,10 @@
             <td>
               <n-link
                 :to="`/posts/${post.id}`"
-                v-html="highLight(post.title)"
+                v-html="$sanitize(highLight(post.title))"
               />
             </td>
-            <td v-html="highLight(post.point)" />
+            <td v-html="$sanitize(highLight(post.point))" />
           </tr>
         </tbody>
       </table>
@@ -89,7 +93,7 @@ export default {
 
 table {
   border-collapse: collapse;
-  width:100%
+  width: 100%;
 }
 td, th {
   border: 1px solid #dddddd;
@@ -99,11 +103,5 @@ td, th {
 th {
   color:white;
   background-color: #1E90FF;
-}
-input {
-  width:30%;
-  padding:.5em 1em;
-  border-radius: 2px;
-  margin-bottom: 1em;;
 }
 </style>
