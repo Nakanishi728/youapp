@@ -3,9 +3,9 @@ class V1::PostsController < ApplicationController
 
   def index
     if params[:offset]
-      @posts = Post.includes({user: {avatar_attachment: :blob}}, :links).limit(20).offset(params[:offset])
+      @posts = Post.includes({user: {avatar_attachment: :blob}}, :links).limit(20).order("created_at DESC").offset(params[:offset])
     else
-      @posts = Post.includes({user: {avatar_attachment: :blob}}, :links).limit(20)
+      @posts = Post.includes({user: {avatar_attachment: :blob}}, :links).limit(20).order("created_at DESC")
     end
     render json: @posts
   end
