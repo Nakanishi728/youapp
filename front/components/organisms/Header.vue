@@ -17,7 +17,7 @@
           v-if="!currentUser"
           to="/login"
           text
-          color="white"
+          color="black"
           :outlined="true"
           small
         >
@@ -27,7 +27,7 @@
           v-if="!currentUser"
           to="/signup"
           text
-          color="white"
+          color="black"
           :outlined="true"
           small
         >
@@ -41,9 +41,7 @@
           nav
         >
           <template v-slot:activator="{on, attrs}">
-            <v-avatar
-              size="40"
-            >
+            <v-avatar>
               <img
                 v-if="currentUser.avatar_url"
                 :src="currentUser.avatar_url"
@@ -53,7 +51,8 @@
               >
               <v-icon
                 v-else
-                size="38"
+                size="52"
+                color="light-blue"
                 alt="Avater"
                 v-bind="attrs"
                 v-on="on"

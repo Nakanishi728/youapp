@@ -2,7 +2,6 @@
   <div class="post-container">
     <div class="post-show-change-box">
       <v-btn
-        outlined
         fab
         small
         color="green lighten-3"

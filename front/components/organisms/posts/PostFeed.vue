@@ -13,12 +13,12 @@
     />
     <v-row justify="center">
       <v-btn
-        v-if="morePost > 20"
-        color="light-blue lighten-2"
-        class="mt-4 white--text more-loading"
+        color="white lighten-2"
+        class="mt-4 blue--text more-loading"
+        style="width:100%;"
         @click="moreLoading"
       >
-        記事読み込み
+        URLをもっと見る
       </v-btn>
     </v-row>
   </div>

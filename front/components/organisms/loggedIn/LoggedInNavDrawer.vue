@@ -6,106 +6,111 @@
     mobile-breakpoint="960"
   >
     <v-list>
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>
-            mdi-home
-          </v-icon>
+      <v-list-item
+        v-for="(nav, i) in navMenus"
+        :key="i"
+        :to="nav.to"
+        exact
+      >
+        <v-list-item-icon class="mr-2">
+          <v-icon size="22" v-text="nav.icon" />
         </v-list-item-icon>
+
         <v-list-item-content>
-          <n-link
-            to="/"
-          >
-            ホーム
-          </n-link>
+          <v-list-item-title>
+            {{ nav.name }}
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      <v-divider />
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>
-            mdi-send
-          </v-icon>
+    </v-list>
+  </v-navigation-drawer>
+  <v-navigation-drawer
+    v-else
+    app
+    clipped
+    mobile-breakpoint="960"
+  >
+    <v-list>
+      <v-list-item
+        v-for="(menu, i) in defaultMenus"
+        :key="i"
+        :to="menu.to"
+        exact
+      >
+        <v-list-item-icon class="mr-2">
+          <v-icon size="22" v-text="menu.icon" />
         </v-list-item-icon>
+
         <v-list-item-content>
-          <n-link
-            to="/posts/create"
-            class="mr-2"
-            color="white"
-            :outlined="true"
-            small
-          >
-            投稿
-          </n-link>
+          <v-list-item-title>
+            {{ menu.name }}
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      <v-divider />
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>
-            mdi-magnify
-          </v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <n-link
-            to="/project/search"
-          >
-            検索
-          </n-link>
-        </v-list-item-content>
-      </v-list-item>
-      <v-divider />
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>
-            mdi-playlist-check
-          </v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <n-link
-            to="/project/stock"
-          >
-            ストック一覧
-          </n-link>
-        </v-list-item-content>
-      </v-list-item>
-      <v-divider />
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>
-            mdi-cog
-          </v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <n-link
-            to="/project/settings"
-          >
-            設定
-          </n-link>
-        </v-list-item-content>
-      </v-list-item>
-      <v-divider />
-      <v-list-item>
-        <v-list-item-icon>
-          <v-icon>
-            mdi-information-outline
-          </v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <n-link
-            to="/project/help"
-          >
-            各機能説明
-          </n-link>
-        </v-list-item-content>
-      </v-list-item>
-      <v-divider />
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      navMenus: [
+        {
+          name: 'ホーム',
+          to: '/',
+          icon: 'mdi-home'
+        },
+        {
+          name: '投稿',
+          to: '/posts/create',
+          icon: 'mdi-send'
+        },
+        {
+          name: '検索',
+          to: '/project/search',
+          icon: 'mdi-magnify'
+        },
+        {
+          name: 'ストック一覧',
+          to: '/project/stock',
+          icon: 'mdi-playlist-check'
+        },
+        {
+          name: '設定',
+          to: '/project/settings',
+          icon: 'mdi-cog'
+        },
+        {
+          name: '各機能説明',
+          to: '/project/help',
+          icon: 'mdi-information-outline'
+        }
+      ],
+      defaultMenus: [
+        {
+          name: 'ホーム',
+          to: '/',
+          icon: 'mdi-home'
+        },
+        {
+          name: '検索',
+          to: '/project/search',
+          icon: 'mdi-magnify'
+        },
+        {
+          name: '設定',
+          to: '/project/settings',
+          icon: 'mdi-cog'
+        },
+        {
+          name: '各機能説明',
+          to: '/project/help',
+          icon: 'mdi-information-outline'
+        }
+      ]
+    }
+  },
   computed: {
     currentUser () {
       return this.$store.state.currentUser
