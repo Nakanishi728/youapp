@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       end
     end
     resources :likes, only: [:index, :create, :destroy]
+    get 'pickups/:id', to: 'pickups#index'
+    post 'pickups/:id', to: 'pickups#create'
     resources :relationships, only: [:create]
     delete 'relationships', to: 'relationships#destroy'
   end

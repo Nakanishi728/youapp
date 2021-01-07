@@ -21,7 +21,7 @@
 export default {
   props: {
     posts: {
-      type: Object,
+      type: [Object, Array],
       required: true
     }
   }

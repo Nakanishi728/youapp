@@ -1,35 +1,29 @@
 <template>
   <v-card>
     <v-list two-line>
-      <v-list-item-group
-        v-model="selected"
-        active-class="blue--text"
-        multiple
-      >
-        <template v-for="(post, index) in posts">
-          <v-list-item :key="post.id">
-            <v-list-item-content>
-              <v-list-item-title class="py-2">
-                <nuxt-link
-                  :to="`/posts/${post.id}`"
-                  style="color:#263238; text-decoration:none;"
-                >
-                  {{ post.title }}
-                </nuxt-link>
-              </v-list-item-title>
-              <div class="post-like-box">
-                <div class="post-like-item-box">
-                  {{ like }}
-                </div>
+      <template v-for="(post, index) in posts">
+        <v-list-item :key="post.id">
+          <v-list-item-content>
+            <v-list-item-title class="py-2">
+              <nuxt-link
+                :to="`/posts/${post.id}`"
+                style="color:#263238; text-decoration:none;"
+              >
+                {{ post.title }}
+              </nuxt-link>
+            </v-list-item-title>
+            <div class="post-like-box">
+              <div class="post-like-item-box">
+                {{ like }}
               </div>
-            </v-list-item-content>
-          </v-list-item>
-          <v-divider
-            v-if="index < posts.length - 1"
-            :key="index"
-          />
-        </template>
-      </v-list-item-group>
+            </div>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider
+          v-if="index < posts.length - 1"
+          :key="index"
+        />
+      </template>
     </v-list>
   </v-card>
 </template>
@@ -38,7 +32,7 @@
 export default {
   props: {
     posts: {
-      type: Object,
+      type: [Object, Array],
       required: true
     }
   },
