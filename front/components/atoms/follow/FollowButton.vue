@@ -58,13 +58,6 @@ export default {
         })
         .then((res) => {
           this.$store.commit('setFollow', true)
-          this.$store.commit('setFlash', {
-            status: true,
-            message: 'フォローしました'
-          })
-          setTimeout(() => {
-            this.$store.commit('setFlash', {})
-          }, 2000)
           this.reload()
         })
     },
@@ -77,13 +70,6 @@ export default {
         .delete('/v1/relationships', { params })
         .then((res) => {
           this.$store.commit('setFollow', false)
-          this.$store.commit('setFlash', {
-            status: true,
-            message: 'フォロー解除しました'
-          })
-          setTimeout(() => {
-            this.$store.commit('setFlash', {})
-          }, 2000)
           this.reload()
         })
     },

@@ -19,7 +19,6 @@
       </v-toolbar>
       <v-form>
         <div class="mt-2 pa-3">
-          <v-divider />
           <v-row justify="center">
             <v-card-text>
               <template v-for="(post, i) in posts">

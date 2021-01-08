@@ -1,31 +1,29 @@
 <template>
-  <v-card>
-    <v-list two-line>
-      <template v-for="(post, index) in posts">
-        <v-list-item :key="post.id">
-          <v-list-item-content>
-            <v-list-item-title class="py-2">
-              <nuxt-link
-                :to="`/posts/${post.id}`"
-                style="color:#263238; text-decoration:none;"
-              >
-                {{ post.title }}
-              </nuxt-link>
-            </v-list-item-title>
-            <div class="post-like-box">
-              <div class="post-like-item-box">
-                {{ like }}
-              </div>
+  <v-list two-line>
+    <template v-for="(post, index) in posts">
+      <v-list-item :key="post.id">
+        <v-list-item-content>
+          <v-list-item-title class="py-2">
+            <nuxt-link
+              :to="`/posts/${post.id}`"
+              style="color:#263238; text-decoration:none;"
+            >
+              {{ post.title }}
+            </nuxt-link>
+          </v-list-item-title>
+          <div class="post-like-box">
+            <div class="post-like-item-box">
+              {{ like }}
             </div>
-          </v-list-item-content>
-        </v-list-item>
-        <v-divider
-          v-if="index < posts.length - 1"
-          :key="index"
-        />
-      </template>
-    </v-list>
-  </v-card>
+          </div>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider
+        v-if="index < posts.length - 1"
+        :key="index"
+      />
+    </template>
+  </v-list>
 </template>
 
 <script>

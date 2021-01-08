@@ -40,7 +40,7 @@
           />
           <v-row justify="center">
             <v-btn
-              color="black lighten-3"
+              color="green lighten-3"
               class="mx-auto white--text mt-4"
               @click="signup"
             >
