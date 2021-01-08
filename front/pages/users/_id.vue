@@ -13,7 +13,9 @@
           />
         </v-col>
         <v-col lg="8" md="8" sm="8" cols="12">
-          <UsersChange />
+          <UsersContentLength
+            :posts="posts"
+          />
           <UsersPickUp
             :user="user"
             :posts="posts"

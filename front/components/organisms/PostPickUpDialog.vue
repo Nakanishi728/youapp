@@ -7,7 +7,7 @@
     <v-card width="700px" class="mx-auto">
       <v-toolbar flat>
         <v-toolbar-title>
-          ピックアップを編集する(3つまで)
+          イチオシに追加する(3つまで)
         </v-toolbar-title>
         <v-spacer />
         <v-btn
@@ -101,7 +101,7 @@ export default {
         .then((res) => {
           this.$store.commit('setFlash', {
             status: true,
-            message: 'ピックアップを追加しました'
+            message: 'イチオシに追加しました'
           })
           setTimeout(() => {
             this.$store.commit('setFlash', {})

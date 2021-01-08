@@ -6,6 +6,12 @@ class V1::LikesController < ApplicationController
     render json: @likes
   end
 
+  def likes
+    @likes = Like.where(user_id: params[:id])
+
+    render json: @likes
+  end
+
   def create
     @like = Like.new(like_params)
 
