@@ -8937,6 +8937,11 @@ vue-client-only@^2.0.0:
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.0.0.tgz#ddad8d675ee02c761a14229f0e440e219de1da1c"
   integrity sha512-arhk1wtWAfLsJyxGMoEYhoBowM87/i6HLSG2LH/03Yog6i2d9JEN1peMP0Ceis+/n9DxdenGYZZTxbPPJyHciA==
 
+vue-draggable@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/vue-draggable/-/vue-draggable-2.0.6.tgz#8ab4c1e90576e19c5676de812cf802b243beb2cb"
+  integrity sha512-/FHtAwrhy6a4duF/zr5Sf3oowf3BMHdcEfi1v8SsYYFCNqbKvBFUaiMs7Lw1ZQq2/2j6yvBoAHPKVmuLFSSiJw==
+
 vue-eslint-parser@^7.0.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.2.0.tgz#1e17ae94ca71e617025e05143c8ac5593aacb6ef"
