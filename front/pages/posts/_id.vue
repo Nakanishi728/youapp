@@ -47,6 +47,11 @@
           :key="link.id"
           :link="link"
         />
+        <v-card-text>
+          <div class="post-index-point mt-2">
+            {{ post.point }}
+          </div>
+        </v-card-text>
       </v-card>
     </div>
   </div>

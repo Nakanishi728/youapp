@@ -1,11 +1,11 @@
 <template>
   <div>
     <v-navigation-drawer
-      v-if="currentUser"
+      v-if="loggedIn"
       v-model="drawer"
       app
       clipped
-      mobile-breakpoint="960"
+      mobile-breakpoint="2000"
     >
       <LoggedInNavDrawer />
     </v-navigation-drawer>
@@ -15,6 +15,7 @@
       clipped-left
     >
       <v-app-bar-nav-icon
+        v-if="loggedIn"
         @click="drawer=!drawer"
       />
       <nuxt-link
