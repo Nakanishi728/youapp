@@ -27,7 +27,8 @@ export default {
     '@/plugins/vee-validate',
     '@/plugins/auth-check',
     '@/plugins/sanitize',
-    '@/plugins/vue-draggable'
+    '@/plugins/vue-draggable',
+    '@/plugins/vue-not-visible'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

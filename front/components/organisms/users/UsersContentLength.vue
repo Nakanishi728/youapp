@@ -48,7 +48,7 @@ export default {
 .user-content-container {
   display: flex;
   justify-content: space-between;
-  margin-left: 100px;
+  margin-left: 30px;
   color: white;
   font-weight: bold;
 }

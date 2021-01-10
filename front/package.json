@@ -20,6 +20,7 @@
     "sanitize-html": "^2.3.0",
     "vee-validate": "3.3.0",
     "vue-draggable": "^2.0.6",
+    "vue-not-visible": "^1.0.9",
     "vuex-persistedstate": "^4.0.0-beta.2"
   },
   "devDependencies": {

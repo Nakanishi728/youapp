@@ -4,11 +4,15 @@
     light
     clipped-left
   >
-    <n-link to="/" style="text-decoration:none;">
-      <AppLogo />
-    </n-link>
+    <AppLogo />
     <v-toolbar-title>
-      {{ appName }}
+      <nuxt-link
+        to="/"
+        class="black--text"
+        style="text-decoration:none;"
+      >
+        {{ appName }}
+      </nuxt-link>
     </v-toolbar-title>
     <v-spacer />
     <div class="header-list">
@@ -39,6 +43,7 @@
           offset-y
           dense
           nav
+          clipped-right
         >
           <template v-slot:activator="{on, attrs}">
             <v-avatar>
@@ -51,7 +56,7 @@
               >
               <v-icon
                 v-else
-                size="52"
+                size="48"
                 color="light-blue"
                 alt="Avater"
                 v-bind="attrs"
@@ -70,7 +75,7 @@
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-subtitle>
-                  {{ this.$store.state.currentUser.name }}
+                  {{ currentUser.name }}
                 </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
@@ -108,7 +113,8 @@ import firebase from '@/plugins/firebase'
 export default {
   data () {
     return {
-      appName: 'PUSHAR'
+      appName: 'PUSHAR',
+      drawer: false
     }
   },
   computed: {
@@ -168,6 +174,5 @@ export default {
 
 .header-list {
    display: flex;
-   margin-right: 200px;
+   margin-right: 50px;
 }
-</style>
