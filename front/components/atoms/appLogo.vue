@@ -10,7 +10,7 @@
   </v-avatar>
 </template>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .my-app-log {
   margin-right: 8px;
   cursor: pointer;

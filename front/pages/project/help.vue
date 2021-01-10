@@ -1,6 +1,5 @@
 <template>
   <div>
-    <LoggedInNavDrawer />
     <div id="app" class="container mt-5">
       <h1>{{ message }}</h1>
       <table class="table table-striped table-bordered">

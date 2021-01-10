@@ -15,7 +15,7 @@
       <v-btn
         color="white lighten-2"
         class="mt-4 blue--text more-loading"
-        style="width:100%;"
+        style="width:70%;"
         @click="moreLoading"
       >
         URLをもっと見る

@@ -1,5 +1,5 @@
 <template>
   <div>
-    <PostFeed />
+    カテゴリー一覧
   </div>
 </template>

@@ -1,6 +1,5 @@
 <template>
   <v-card class="mx-auto mt-5 pa-5" width="600px">
-    <LoggedInNavDrawer />
     <v-card-title>
       <h2 class="create-post-h2">
         投稿(シェア)

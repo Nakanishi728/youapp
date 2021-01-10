@@ -1,6 +1,5 @@
 <template>
   <div>
-    <LoggedInNavDrawer />
     <v-card class="mx-auto mt-4 pa-3" width="600px">
       <v-card-title>
         ストック一覧

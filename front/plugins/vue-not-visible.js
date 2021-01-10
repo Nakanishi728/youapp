@@ -10,4 +10,4 @@ import vueNotVisible from 'vue-not-visible'
     hd: 1920,
 }
 */
-Vue.use(vueNotVisible, { tablet: 960 })
+Vue.use(vueNotVisible)

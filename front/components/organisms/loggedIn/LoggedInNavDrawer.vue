@@ -1,10 +1,4 @@
 <template>
-  <v-navigation-drawer
-    v-if="currentUser"
-    app
-    clipped
-    mobile-breakpoint="960"
-  >
     <v-list>
       <v-list-item
         v-for="(nav, i) in navMenus"
@@ -23,32 +17,6 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-  </v-navigation-drawer>
-  <v-navigation-drawer
-    v-else
-    app
-    clipped
-    mobile-breakpoint="960"
-  >
-    <v-list>
-      <v-list-item
-        v-for="(menu, i) in defaultMenus"
-        :key="i"
-        :to="menu.to"
-        exact
-      >
-        <v-list-item-icon class="mr-2">
-          <v-icon size="22" v-text="menu.icon" />
-        </v-list-item-icon>
-
-        <v-list-item-content>
-          <v-list-item-title>
-            {{ menu.name }}
-          </v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </v-navigation-drawer>
 </template>
 
 <script>
