@@ -1,16 +1,18 @@
 <template>
-  <v-card v-show="currentUser && currentUser.id === like.user.id" class="mx-auto mt-4 pa-3" width="600px">
-    <v-card-title class="py-2">
+  <v-card
+    v-show="currentUser && currentUser.id === like.user.id"
+    class="mx-auto mt-2"
+    width="600px"
+  >
+    <v-card-text class="ma-0">
       <nuxt-link
         :to="`/posts/${like.post.id}`"
         style="color:#263238; text-decoration:none;"
       >
         {{ like.post.title }}
       </nuxt-link>
-    </v-card-title>
-    <v-divider />
-    <v-card-text>
-      <div class="post-index-point mt-2">
+      <v-divider />
+      <div class="post-index-point ma-0">
         {{ like.post.point }}
       </div>
       <div class="post-container">
@@ -81,5 +83,6 @@ export default {
 .post-container {
   display: flex;
   justify-content: flex-end;
+
 }
 </style>

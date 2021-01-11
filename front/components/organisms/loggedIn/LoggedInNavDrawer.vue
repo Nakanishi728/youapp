@@ -7,7 +7,7 @@
       exact
     >
       <v-list-item-icon class="mr-2">
-        <v-icon size="22" v-text="nav.icon" />
+        <v-icon size="22" color="blue" v-text="nav.icon" />
       </v-list-item-icon>
       <v-list-item-content>
         <v-list-item-title>
@@ -29,12 +29,12 @@ export default {
           icon: 'mdi-home'
         },
         {
-          name: '投稿',
+          name: '新しい投稿',
           to: '/posts/create',
           icon: 'mdi-send'
         },
         {
-          name: '検索',
+          name: 'URL検索',
           to: '/project/search',
           icon: 'mdi-magnify'
         },
@@ -49,7 +49,7 @@ export default {
           icon: 'mdi-cog'
         },
         {
-          name: '各機能説明',
+          name: 'ヘルプ',
           to: '/project/help',
           icon: 'mdi-information-outline'
         }

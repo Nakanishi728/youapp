@@ -52,6 +52,11 @@
             {{ post.point }}
           </div>
         </v-card-text>
+        <LikeButton
+          v-if="currentUser"
+          :user="post.user"
+          :post="post"
+        />
       </v-card>
     </div>
   </div>
