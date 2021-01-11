@@ -24,27 +24,27 @@
         :link="link"
       />
     </v-carousel>
-      <v-list two-line>
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title>
-              <nuxt-link
-                :to="`/posts/${post.id}`"
-                style="color:#263238; text-decoration:none;"
-              >
-                {{ post.title }}
-              </nuxt-link>
-            </v-list-item-title>
-          </v-list-item-content>
-          <v-list-item-action>
-            <LikeButton
-              v-if="currentUser"
-              :user="post.user"
-              :post="post"
-            />
-          </v-list-item-action>
-        </v-list-item>
-      </v-list>
+    <v-list two-line>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title>
+            <nuxt-link
+              :to="`/posts/${post.id}`"
+              style="color:#263238; text-decoration:none;"
+            >
+              {{ post.title }}
+            </nuxt-link>
+          </v-list-item-title>
+        </v-list-item-content>
+        <v-list-item-action>
+          <LikeButton
+            v-if="currentUser"
+            :user="post.user"
+            :post="post"
+          />
+        </v-list-item-action>
+      </v-list-item>
+    </v-list>
   </v-card>
 </template>
 

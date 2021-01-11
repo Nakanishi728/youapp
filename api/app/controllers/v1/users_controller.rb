@@ -11,6 +11,12 @@ class V1::UsersController < ApplicationController
     end
   end
 
+  def latest
+    @users = User.includes(:posts).limit(50).order("created_at DESC")
+
+    render json: @users
+  end
+
   def show
     render json: @user
   end

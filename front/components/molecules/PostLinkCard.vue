@@ -1,22 +1,22 @@
 <template>
   <div>
-      <v-carousel-item height="100%">
-        <v-sheet
-          height="100%"
-          tile
+    <v-carousel-item height="100%">
+      <v-sheet
+        height="100%"
+        tile
+      >
+        <v-row
+          class="fill-height"
+          align="center"
+          justify="center"
         >
-          <v-row
-            class="fill-height"
-            align="center"
-            justify="center"
-          >
-            <v-img
-              :src="og_image"
-              height="100%"
-            />
-          </v-row>
-        </v-sheet>
-      </v-carousel-item>
+          <v-img
+            :src="og_image"
+            height="100%"
+          />
+        </v-row>
+      </v-sheet>
+    </v-carousel-item>
   </div>
 </template>
 

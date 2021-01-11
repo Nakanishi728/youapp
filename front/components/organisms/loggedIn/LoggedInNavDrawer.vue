@@ -1,22 +1,21 @@
 <template>
-    <v-list>
-      <v-list-item
-        v-for="(nav, i) in navMenus"
-        :key="i"
-        :to="nav.to"
-        exact
-      >
-        <v-list-item-icon class="mr-2">
-          <v-icon size="22" v-text="nav.icon" />
-        </v-list-item-icon>
-
-        <v-list-item-content>
-          <v-list-item-title>
-            {{ nav.name }}
-          </v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
+  <v-list>
+    <v-list-item
+      v-for="(nav, i) in navMenus"
+      :key="i"
+      :to="nav.to"
+      exact
+    >
+      <v-list-item-icon class="mr-2">
+        <v-icon size="22" v-text="nav.icon" />
+      </v-list-item-icon>
+      <v-list-item-content>
+        <v-list-item-title>
+          {{ nav.name }}
+        </v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+  </v-list>
 </template>
 
 <script>
