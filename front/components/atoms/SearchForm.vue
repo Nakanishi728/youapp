@@ -15,7 +15,7 @@
         <thead>
           <tr>
             <th style="width:20%;">
-              URLタイトル
+              URL
             </th>
             <th style="width:80%;">
               URL詳細

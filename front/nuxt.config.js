@@ -24,9 +24,10 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '@/plugins/vee-validate',
     '@/plugins/auth-check',
-    '@/plugins/sanitize'
+    '@/plugins/vee-validate',
+    '@/plugins/sanitize',
+    '@/plugins/vue-not-visible'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

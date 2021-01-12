@@ -8,14 +8,9 @@
       </v-row>
       <v-row>
         <v-col>
-          <PostFeed />
+          <UsersLatest />
         </v-col>
       </v-row>
     </div>
   </v-container>
 </template>
-
-<script>
-export default {
-}
-</script>

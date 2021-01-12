@@ -1,5 +1,10 @@
 class V1::RelationshipsController < ApplicationController
 
+  def follower
+      @relationship = Relationship.where(follower_id: params[:follower_id], following_id: params[:following_id])
+      render json: @relationship
+  end
+
   def create
     @user = User.find(params[:relationship][:following_id])
     current_user = User.find_by(id: params[:follower_id])

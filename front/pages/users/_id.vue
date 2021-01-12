@@ -11,12 +11,18 @@
             :follow="follow"
             :follower="follower"
           />
-          <UsersLinks />
         </v-col>
         <v-col lg="8" md="8" sm="8" cols="12">
-          <UsersChange />
-          <UsersPickUp />
-          <UsersContents />
+          <UsersContentLength
+            :posts="posts"
+          />
+          <UsersPickUp
+            :user="user"
+            :posts="posts"
+          />
+          <UsersContents
+            :posts="posts"
+          />
         </v-col>
       </v-row>
     </div>
@@ -25,27 +31,14 @@
 
 <script>
 import axios from '@/plugins/axios'
-import ErrorAnnounce from '~/components/molecules/ErrorAnnounce.vue'
-import UsersInfo from '~/components/organisms/users/UsersInfo.vue'
-import UsersLinks from '~/components/organisms/users/UsersLinks.vue'
-import UsersContents from '~/components/organisms/users/UsersContents.vue'
-import UsersPickUp from '~/components/organisms/users/UsersPickUp.vue'
-import UsersChange from '~/components/organisms/users/UsersChange.vue'
 
 export default {
-  components: {
-    ErrorAnnounce,
-    UsersInfo,
-    UsersLinks,
-    UsersContents,
-    UsersPickUp,
-    UsersChange
-  },
   data () {
     return {
       user: {},
       follow: {},
       follower: {},
+      posts: {},
       notFound: false
     }
   },
@@ -82,6 +75,17 @@ export default {
       .then((res) => {
         const follower = res.data
         this.follower = follower
+      })
+      .catch((error) => {
+        if (error.response.status === 404) {
+          this.notFound = true
+        }
+      })
+    axios
+      .get(`/v1/posts/${this.$route.params.id}/postlists`)
+      .then((res) => {
+        const posts = res.data
+        this.posts = posts
       })
       .catch((error) => {
         if (error.response.status === 404) {

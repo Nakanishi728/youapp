@@ -1,6 +1,5 @@
 <template>
   <div class="posts-id">
-    <LoggedInNavDrawer />
     <ErrorAnnounce
       :status="notFound"
     />
@@ -47,6 +46,16 @@
           v-for="link in links"
           :key="link.id"
           :link="link"
+        />
+        <v-card-text>
+          <div class="post-index-point mt-2">
+            {{ post.point }}
+          </div>
+        </v-card-text>
+        <LikeButton
+          v-if="currentUser"
+          :user="post.user"
+          :post="post"
         />
       </v-card>
     </div>

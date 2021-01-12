@@ -1,6 +1,5 @@
 <template>
   <div>
-    <LoggedInNavDrawer />
     <keep-alive>
       <SearchForm />
     </keep-alive>

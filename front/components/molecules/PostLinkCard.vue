@@ -1,39 +1,22 @@
 <template>
-  <div class="link-box mt-2">
-    <v-card
-      max-width="600px"
-      color="blue lighten-2"
-      style="color:white;"
-    >
-      <v-card-actions>
-        <v-btn
-          color="white"
-          text
-          :href="og_url"
+  <div>
+    <v-carousel-item height="100%">
+      <v-sheet
+        height="100%"
+        tile
+      >
+        <v-row
+          class="fill-height"
+          align="center"
+          justify="center"
         >
-          リンク先へ
-        </v-btn>
-        <v-spacer />
-        <v-btn
-          icon
-          @click="show = !show"
-        >
-          <v-icon color="white">
-            {{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}
-          </v-icon>
-        </v-btn>
-      </v-card-actions>
-      <v-expand-transition>
-        <div v-show="show">
-          <v-divider />
-          <v-card-text>
-            <p>
-              {{ og_title }}
-            </p>
-          </v-card-text>
-        </div>
-      </v-expand-transition>
-    </v-card>
+          <v-img
+            :src="og_image"
+            height="100%"
+          />
+        </v-row>
+      </v-sheet>
+    </v-carousel-item>
   </div>
 </template>
 

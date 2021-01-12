@@ -1,10 +1,24 @@
 <template>
   <div>
-    <Stock
-      v-for="like in likes"
-      :key="like.id"
-      :like="like"
-    />
+    <v-row>
+      <v-card
+        class="mx-auto mt-4 pa-3"
+        width="600px"
+        color="white--text"
+        style="background-color:gray;"
+      >
+        <v-card-title>
+          ストック
+        </v-card-title>
+      </v-card>
+    </v-row>
+    <v-row>
+      <Stock
+        v-for="like in likes"
+        :key="like.id"
+        :like="like"
+      />
+    </v-row>
   </div>
 </template>
 

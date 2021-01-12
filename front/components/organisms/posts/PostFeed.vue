@@ -1,24 +1,21 @@
 <template>
   <div>
-    <v-card class="mx-auto mt-4 pa-3" width="600px">
-      <v-card-title>
-        投稿一覧
-      </v-card-title>
-    </v-card>
-    <Post
-      v-for="(post, $index) in posts"
-      :key="$index"
-      :user="post.user"
-      :post="post"
-    />
+    <v-row justify="center">
+      <Post
+        v-for="(post, $index) in posts"
+        :key="$index"
+        :user="post.user"
+        :post="post"
+      />
+    </v-row>
     <v-row justify="center">
       <v-btn
-        v-if="morePost> 20"
-        color="light-blue lighten-2"
-        class="mt-4 white--text more-loading"
+        color="white lighten-2"
+        class="mt-4 blue--text more-loading"
+        style="width:70%;"
         @click="moreLoading"
       >
-        記事読み込み
+        URLをもっと見る
       </v-btn>
     </v-row>
   </div>
@@ -26,12 +23,8 @@
 
 <script>
 import axios from '@/plugins/axios'
-import Post from '~/components/molecules/posts/Post.vue'
 
 export default {
-  components: {
-    Post
-  },
   data () {
     return {
       postCount: 0,

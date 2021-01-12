@@ -1,6 +1,10 @@
 <template>
   <v-card class="user-info-box">
     <v-card-text>
+      <FollowButton
+        :user="user"
+        :follower="follower"
+      />
       <v-row justify="center">
         <UsersAvatar
           :size="62"
@@ -23,8 +27,18 @@
             :follow="follow"
             :follower="follower"
           />
+          <v-btn
+            v-if="currentUser && currentUser.id === user.id"
+            class="white--text"
+            color="green lighten-1"
+            style="width:100%;"
+            to="/users/profile"
+          >
+            プロフィール編集
+          </v-btn>
           <UsersFollow
             :user="user"
+            :follow="follow"
             :follower="follower"
           />
         </div>
@@ -57,7 +71,7 @@ export default {
 }
 </script>
 
-<style>
+<style type="scoped">
 .user-info-box-name {
   padding-top: 12px;
   font-size: 18px;
@@ -65,7 +79,7 @@ export default {
 }
 
 .user-info-box-profile {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
 }
 </style>

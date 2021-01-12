@@ -2,29 +2,16 @@
   <div class="follow-container">
     <div class="follow-change-box">
       <v-btn
-        v-if="currentUser && currentUser.id === user.id"
-        class="white--text"
-        color="green lighten-1"
-        style="width:100%;"
-        to="/users/profile"
-      >
-        プロフィール編集
-      </v-btn>
-      <v-btn
-        color="light-blue lighten-1"
-        style="width:100%;"
+        v-if="currentUser && currentUser.id !== user.id"
         outlined
-        @click="unfollow"
-      >
-        フォロー解除
-      </v-btn>
-      <v-btn
+        fab
+        small
+        elevation="0"
         class="white--text"
         color="blue lighten-1"
-        style="width:100%;"
         @click="follow"
       >
-        フォロー
+        <v-icon>mdi-account-plus</v-icon>
       </v-btn>
     </div>
   </div>
@@ -57,36 +44,26 @@ export default {
           following_id: this.$route.params.id
         })
         .then((res) => {
-          this.$store.commit('setFollow', true)
           this.$store.commit('setFlash', {
             status: true,
             message: 'フォローしました'
           })
           setTimeout(() => {
             this.$store.commit('setFlash', {})
-          }, 2000)
-          this.$router.replace(`/users/${this.$store.state.currentUser.id}`)
+          }, 3)
+          this.reload()
         })
     },
-    unfollow () {
-      const params = {
-        follower_id: this.currentUser.id,
-        following_id: this.$route.params.id
-      }
-      axios
-        .delete('/v1/relationships', { params })
-        .then((res) => {
-          this.$store.commit('setFollow', false)
-          this.$store.commit('setFlash', {
-            status: true,
-            message: 'フォロー解除しました'
-          })
-          setTimeout(() => {
-            this.$store.commit('setFlash', {})
-          }, 2000)
-          this.$router.replace('/')
-        })
+    reload () {
+      this.$router.go({ path: this.$router.currentRoute.path, force: true })
     }
   }
 }
 </script>
+
+<style type="scoped">
+.follow-container {
+  display: flex;
+  justify-content: flex-end;
+}
+</style>
