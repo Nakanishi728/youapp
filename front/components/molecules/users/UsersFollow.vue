@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FollowButton
+    <FollowDeleteButton
       :user="user"
       :follower="follower"
     />
@@ -13,6 +13,10 @@ export default {
     user: {
       type: Object,
       required: true
+    },
+    follow: {
+      type: [Object, Array],
+      default: () => {}
     },
     follower: {
       type: [Object, Array],

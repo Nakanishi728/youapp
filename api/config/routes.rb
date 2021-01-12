@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get 'pickups/:id', to: 'pickups#index'
     post 'pickups/:id', to: 'pickups#create'
     resources :relationships, only: [:create]
+    get 'relationships/follower', to: 'relationships#follower'
     delete 'relationships', to: 'relationships#destroy'
   end
  end
