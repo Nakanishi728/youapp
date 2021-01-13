@@ -53,6 +53,7 @@
 <script>
 import axios from '@/plugins/axios'
 import FileInput from '~/components/atoms/FileInput.vue'
+
 export default {
   components: {
     FileInput

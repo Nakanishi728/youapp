@@ -38,7 +38,6 @@
           </v-btn>
           <UsersFollow
             :user="user"
-            :follow="follow"
             :follower="follower"
           />
         </div>

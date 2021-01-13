@@ -1,23 +1,27 @@
 <template>
   <div>
     <v-row>
-      <v-card
-        class="mx-auto mt-4 pa-3"
-        width="600px"
-        color="white--text"
-        style="background-color:gray;"
-      >
-        <v-card-title>
-          ストック
-        </v-card-title>
-      </v-card>
+      <v-col>
+        <v-card
+          class="mx-auto mt-4 pa-3"
+          width="600"
+          color="white--text"
+          style="background-color:gray;"
+        >
+          <v-card-title>
+            ストック
+          </v-card-title>
+        </v-card>
+      </v-col>
     </v-row>
     <v-row>
-      <Stock
-        v-for="like in likes"
-        :key="like.id"
-        :like="like"
-      />
+      <v-col>
+        <Stock
+          v-for="like in likes"
+          :key="like.id"
+          :like="like"
+        />
+      </v-col>
     </v-row>
   </div>
 </template>

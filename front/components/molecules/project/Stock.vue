@@ -2,7 +2,7 @@
   <v-card
     v-show="currentUser && currentUser.id === like.user.id"
     class="mx-auto mt-2"
-    width="600px"
+    width="600"
   >
     <v-card-text class="ma-0">
       <nuxt-link
