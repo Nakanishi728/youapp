@@ -14,10 +14,6 @@ export default {
       type: Object,
       required: true
     },
-    follow: {
-      type: [Object, Array],
-      default: () => {}
-    },
     follower: {
       type: [Object, Array],
       default: () => {}

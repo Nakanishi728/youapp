@@ -2,6 +2,7 @@
   <v-card class="user-info-box">
     <v-card-text>
       <FollowButton
+        v-show="currentUser && currentUser.id !== user.id"
         :user="user"
         :follower="follower"
       />
@@ -38,7 +39,6 @@
           </v-btn>
           <UsersFollow
             :user="user"
-            :follow="follow"
             :follower="follower"
           />
         </div>

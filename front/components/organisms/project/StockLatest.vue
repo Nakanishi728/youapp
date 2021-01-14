@@ -23,6 +23,7 @@
             </v-icon>
           </v-avatar>
           <nuxt-link
+            v-not-visible="'mobile'"
             :to="`/users/${like.user.id}`"
             style="color:#37474F;"
           >

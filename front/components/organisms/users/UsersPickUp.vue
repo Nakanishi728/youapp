@@ -12,7 +12,7 @@
         mdi-check-bold
       </v-icon>
       <h4>
-        ユーザーイチオシのURL
+        イチオシのURL
       </h4>
     </v-card-title>
     <v-list-item>
@@ -31,7 +31,13 @@
               </v-list-item-title>
               <div class="pickup-container">
                 <div class="pickup-show-item-box">
-                  {{ pickup.post.id }}
+                  <v-icon
+                    v-show="currentUser && currentUser.id === user.id"
+                    class="red--text"
+                    @click="deletePickUp(pickup.id)"
+                  >
+                    mdi-minus-box-outline
+                  </v-icon>
                 </div>
               </div>
             </v-list-item-content>
@@ -94,8 +100,25 @@ export default {
       })
   },
   methods: {
+    deletePickUp (i) {
+      axios
+        .delete(`/v1/pickups/${i}`)
+        .then((res) => {
+          this.$store.commit('setFlash', {
+            status: true,
+            message: 'イチオシから削除しました'
+          })
+          setTimeout(() => {
+            this.$store.commit('setFlash', {})
+          }, 1)
+          this.reload()
+        })
+    },
     openDialog () {
       this.dialog = true
+    },
+    reload () {
+      this.$router.go({ path: this.$router.currentRoute.path, force: true })
     }
   }
 }

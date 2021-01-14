@@ -44,36 +44,14 @@ export default {
           icon: 'mdi-playlist-check'
         },
         {
-          name: '設定',
-          to: '/project/settings',
-          icon: 'mdi-cog'
-        },
-        {
           name: 'ヘルプ',
           to: '/project/help',
           icon: 'mdi-information-outline'
-        }
-      ],
-      defaultMenus: [
-        {
-          name: 'ホーム',
-          to: '/',
-          icon: 'mdi-home'
         },
         {
-          name: '検索',
-          to: '/project/search',
-          icon: 'mdi-magnify'
-        },
-        {
-          name: '設定',
+          name: '退会申請',
           to: '/project/settings',
-          icon: 'mdi-cog'
-        },
-        {
-          name: '各機能説明',
-          to: '/project/help',
-          icon: 'mdi-information-outline'
+          icon: 'mdi-account-remove'
         }
       ]
     }

@@ -1,6 +1,9 @@
 <template>
   <v-app style="background-color: #ECEFF1;">
     <Flash />
+    <div>
+      <Loading v-show="loading === true" />
+    </div>
     <Header />
     <v-main>
       <v-container>
@@ -13,5 +16,10 @@
 <script>
 
 export default {
+  computed: {
+    loading () {
+      return this.$store.state.loading
+    }
+  }
 }
 </script>

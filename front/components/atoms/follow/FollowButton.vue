@@ -2,7 +2,6 @@
   <div class="follow-container">
     <div class="follow-change-box">
       <v-btn
-        v-if="currentUser && currentUser.id !== user.id"
         outlined
         fab
         small

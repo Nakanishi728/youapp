@@ -13,7 +13,7 @@
           </v-list-item-title>
           <div class="post-like-box">
             <div class="post-like-item-box">
-              {{ like }}
+              {{ post.user.name }}{{ postmessage }}
             </div>
           </div>
         </v-list-item-content>
@@ -36,7 +36,7 @@ export default {
   },
   data () {
     return {
-      like: 'お気に入り'
+      postmessage: 'が投稿済み'
     }
   }
 }

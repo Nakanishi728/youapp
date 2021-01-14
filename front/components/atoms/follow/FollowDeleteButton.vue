@@ -52,8 +52,11 @@ export default {
           setTimeout(() => {
             this.$store.commit('setFlash', {})
           }, 2000)
-          this.$router.replace(`/users/${this.$store.state.currentUser.id}`)
+          this.reload()
         })
+    },
+    reload () {
+      this.$router.go({ path: this.$router.currentRoute.path, force: true })
     }
   }
 }

@@ -13,7 +13,7 @@
             class="mx-auto my-4"
           >
             <v-card-title>
-              ストック一覧(他のユーザーがどんなURLに興味を持っているのか見てみよう)
+              USERストック一覧<span v-not-visible="'tablet'" @:click="show('tablet')">(他のユーザーがどんなURLに興味を持っているのか見てみよう)</span>
             </v-card-title>
           </v-card>
           <StockLatest
@@ -42,6 +42,16 @@
 import axios from '@/plugins/axios'
 
 export default {
+  fetch ({ store, redirect }) {
+    store.watch(
+      state => state.currentUser,
+      (newUser, oldUser) => {
+        if (!newUser) {
+          return redirect('/login')
+        }
+      }
+    )
+  },
   data () {
     return {
       likes: {},
@@ -77,6 +87,9 @@ export default {
             this.morePost = false
           }
         })
+    },
+    show (str) {
+      alert(str)
     }
   }
 }
