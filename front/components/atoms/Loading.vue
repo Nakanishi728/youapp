@@ -1,7 +1,10 @@
 <template>
   <div class="loading">
     <div class="animation">
-      Loading...
+      <v-progress-circular
+        size="90"
+        indeterminate
+      />
     </div>
   </div>
 </template>
@@ -20,7 +23,7 @@ export default {
   height: 100vh;
   top: 0px;
   left: 0px;
-  background: #000;
+  background: white;
   z-index: 9999;
 }
 .animation{
@@ -30,7 +33,7 @@ export default {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: black;
   -webkit-animation: lodanimetion 1500ms ease-out forwards infinite;
   animation: lodanimetion 1500ms ease-out forwards infinite;
 }
