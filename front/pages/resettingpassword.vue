@@ -36,6 +36,11 @@
 import firebase from '@/plugins/firebase'
 
 export default {
+  fetch ({ redirect, store }) {
+    if (store.state.currentUser) {
+      return redirect('/')
+    }
+  },
   data () {
     return {
       email: '',

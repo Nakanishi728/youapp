@@ -52,6 +52,11 @@
 import firebase from '@/plugins/firebase'
 
 export default {
+  fetch ({ redirect, store }) {
+    if (store.state.currentUser) {
+      return redirect('/')
+    }
+  },
   data () {
     return {
       email: '',
@@ -62,10 +67,8 @@ export default {
   },
   methods: {
     login () {
-      this.$store.commit('setLoading', true)
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
-          this.$store.commit('setLoading', false)
           this.$store.commit('setFlash', {
             status: true,
             message: 'ログインしました'
@@ -87,11 +90,6 @@ export default {
             }
           })(error.code)
         })
-    },
-    fetch ({ redirect, store }) {
-      if (store.state.currentUser) {
-        return redirect('/')
-      }
     }
   }
 }

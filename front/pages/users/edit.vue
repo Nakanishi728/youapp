@@ -70,19 +70,6 @@
             {{ error }}
           </p>
         </v-form>
-        <div class="user-destroy-box">
-          <h3 class="edit-h3">
-            アカウントを削除する
-          </h3>
-          <v-row justify="center">
-            <v-btn
-              color="red--text white accent-3"
-              @click="openDialogForDeleteAccount"
-            >
-              削除
-            </v-btn>
-          </v-row>
-        </div>
       </v-card-text>
     </v-card>
   </v-container>
@@ -121,8 +108,7 @@ export default {
       disabled: false,
       dialog: false,
       isEmail: false,
-      isPassword: false,
-      isDeleteAccount: false
+      isPassword: false
     }
   },
   computed: {
@@ -207,35 +193,12 @@ export default {
         }, 2000)
       })
     },
-    destroyUser () {
-      const user = firebase.auth().currentUser
-      this.$store.commit('setLoading', true)
-      user.delete().then(() => {
-        axios
-          .delete(`/v1/users/${this.currentUser.id}`, { user })
-          .then(() => {
-            this.$store.commit('setLoading', false)
-            this.$store.commit('setFlash', {
-              status: true,
-              message: 'ユーザーを削除しました'
-            })
-            setTimeout(() => {
-              this.$store.commit('setFlash', {})
-            }, 2000)
-            this.$router.push('/')
-          })
-      })
-    },
     openDialogForEmail () {
       this.isEmail = true
       this.dialog = true
     },
     openDialogForPassword () {
       this.isPassword = true
-      this.dialog = true
-    },
-    openDialogForDeleteAccount () {
-      this.isDeleteAccount = true
       this.dialog = true
     }
   }

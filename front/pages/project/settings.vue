@@ -56,6 +56,16 @@ import axios from '@/plugins/axios'
 import firebase from '@/plugins/firebase'
 
 export default {
+  fetch ({ store, redirect }) {
+    store.watch(
+      state => state.currentUser,
+      (newUser, oldUser) => {
+        if (!newUser) {
+          return redirect('/login')
+        }
+      }
+    )
+  },
   data () {
     return {
       deletemessage: 'この度は、PUSHARをご利用いただき誠にありがとうございます。PUSHARを退会すると、ご利用履歴などの一切の情報を削除いたします。なお、一度退会されたアカウント情報の復元は不可になります。上記に同意の上、退会を希望される場合は以下から退会確定をお願いいたします。',
