@@ -16,6 +16,11 @@ class V1::PickupsController < ApplicationController
     end
   end
 
+  def destroy
+    @pickup = Pickup.find(params[:id])
+    @pickup.destroy
+  end
+
   private
     def pickup_params
       params.require(:pickup).permit(:id, :post_id, :user_id)
