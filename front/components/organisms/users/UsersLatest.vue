@@ -5,7 +5,7 @@
       class="mx-auto my-4"
     >
       <v-card-title>
-        ユーザー掲示板<span v-not-visible="'tablet'" @:click="show('tablet')">(PUSHARを使い始めて間もないユーザーが掲示されています)</span>
+        User最新50<span v-not-visible="'tablet'" @:click="show('tablet')">(PUSHARを使い始めて間もないユーザーが掲示されています)</span>
       </v-card-title>
     </v-card>
     <v-list two-line>

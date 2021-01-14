@@ -5,7 +5,7 @@
         サイトについて
       </v-card-title>
       <v-card-text class="text-center">
-        プログラミング初心者に優しいURLを共有するアプリケーションです
+        PUSHARは、URLを共有するアプリケーションです。<br>特に、プログラミング学習において関連ページにどんどん進んで行ってしまうと<br>Googleのタグの溜まりすぎで目的のページを見失ってしまうなどの本末転倒を防いでくれます。<br>簡単なストック機能を利用して、興味あるのサイトをゆっくり整理しよう。<br>また、他のユーザーとURLを共有してプログラミング学習の進捗にエンジンをかけましょう。
       </v-card-text>
     </v-card>
     <v-card-title class="text-subtitle-2 justify-center">
