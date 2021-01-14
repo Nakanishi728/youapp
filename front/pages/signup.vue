@@ -119,8 +119,8 @@ export default {
 }
 </script>
 
-<style>
-  .signup-title {
-    font-size: 24px;
-  }
+<style type="scoped">
+.signup-title {
+  font-size: 24px;
+}
 </style>

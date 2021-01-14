@@ -1,11 +1,17 @@
 <template>
   <v-container>
+    <LoginDialog
+      :dialog="dialog"
+      :email="originEmail"
+      @closeDialog="dialog = false"
+      @loginSuccess="loginSuccess"
+    />
     <v-row
       justify="center"
     >
       <v-card
         flat
-        width="500"
+        width="500px"
         class="mx-auto"
       >
         <v-card-title>
@@ -33,7 +39,7 @@
                 v-show="checkbox === true"
                 class="mb-5"
                 color="red--text white accent-3"
-                @click="destroyUser"
+                @click="openDialogForDeleteAccount"
               >
                 退会
               </v-btn>
@@ -85,19 +91,18 @@ export default {
   },
   methods: {
     loginSuccess () {
-      if (this.isEmail) {
-        this.isEmail = false
-        this.changeUsersEmail()
-      } else if (this.isPassword) {
-        this.isPassword = false
-        this.changeUsersPassword()
+      if (this.isDeleteAccount) {
+        this.isDeleteAccount = false
+        this.destroyUser()
       }
     },
     destroyUser () {
+      this.$store.commit('setLoading', true)
       const user = firebase.auth().currentUser
       user.delete().then(() => {
-        axios.delete(`/v1/users/${this.currentUser.id}`)
+        axios.delete(`/v1/users/${this.currentUser.id}`, { user })
           .then(() => {
+            this.$store.commit('setLoading', false)
             this.$store.commit('setFlash', {
               status: true,
               message: 'ユーザーを削除しました'

@@ -70,6 +70,19 @@
             {{ error }}
           </p>
         </v-form>
+        <div class="user-destroy-box">
+          <h3 class="edit-h3">
+            アカウントを削除する
+          </h3>
+          <v-row justify="center">
+            <v-btn
+              color="red--text white accent-3"
+              @click="openDialogForDeleteAccount"
+            >
+              削除
+            </v-btn>
+          </v-row>
+        </div>
       </v-card-text>
     </v-card>
   </v-container>

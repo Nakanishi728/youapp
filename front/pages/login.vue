@@ -2,7 +2,7 @@
   <ValidationObserver>
     <v-card class="mx-auto mt-5 pa-5" width="400px">
       <v-card-title>
-        <h1 class="signup-title">
+        <h1 class="login-title">
           ログイン
         </h1>
       </v-card-title>
@@ -25,6 +25,14 @@
             vid="password"
             @click:append="show1 = !show1"
           />
+          <v-card-actions>
+            <nuxt-link
+              to="/resettingpassword"
+              class="body-2 text-decoration-none"
+            >
+              パスワードを忘れた?
+            </nuxt-link>
+          </v-card-actions>
           <v-row justify="center">
             <v-btn
               color="blue lighten-3"
@@ -54,8 +62,10 @@ export default {
   },
   methods: {
     login () {
+      this.$store.commit('setLoading', true)
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
+          this.$store.commit('setLoading', false)
           this.$store.commit('setFlash', {
             status: true,
             message: 'ログインしました'
@@ -86,3 +96,9 @@ export default {
   }
 }
 </script>
+
+<style type="scoped">
+.login-title {
+  font-size: 24px;
+}
+</style>

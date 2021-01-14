@@ -2,7 +2,7 @@
   <div class="add-link-box">
     <v-card-title>
       <h3>
-        リンクを追加する
+        URLを追加
       </h3>
     </v-card-title>
 
@@ -33,7 +33,7 @@
         <input
           v-model="secondUrlForVeeValidate"
           type="text"
-          placeholder="添付しない場合タップしてください"
+          placeholder="添付しない場合タップ後次へ"
           @input="$emit('update:secondUrl', $event.target.value)"
         >
         <div class="error-message">
@@ -51,7 +51,7 @@
         <input
           v-model="thirdUrlForVeeValidate"
           type="text"
-          placeholder="添付しない場合タップしてください"
+          placeholder="添付しない場合タップ後次へ"
           @input="$emit('update:thirdUrl', $event.target.value)"
         >
         <div class="error-message">

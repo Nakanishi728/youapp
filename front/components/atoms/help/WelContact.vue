@@ -73,6 +73,9 @@
             >
               キャンセル
             </v-btn>
+            <div class="grey--text">
+              <small>実際には送信されません</small>
+            </div>
           </v-container>
         </v-form>
       </v-col>
