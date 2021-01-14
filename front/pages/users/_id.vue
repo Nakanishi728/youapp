@@ -48,9 +48,11 @@ export default {
     }
   },
   mounted () {
+    this.$store.commit('setLoading', true)
     axios
       .get(`/v1/users/${this.$route.params.id}`)
       .then((res) => {
+        this.$store.commit('setLoading', false)
         const user = res.data
         this.user = user
       })

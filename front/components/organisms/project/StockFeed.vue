@@ -4,7 +4,7 @@
       <v-col>
         <v-card
           class="mx-auto mt-4 pa-3"
-          width="600"
+          width="600px"
           color="white--text"
           style="background-color:gray;"
         >
@@ -28,21 +28,19 @@
 
 <script>
 import axios from '@/plugins/axios'
-import Stock from '~/components/molecules/project/Stock.vue'
 
 export default {
-  components: {
-    Stock
-  },
   data () {
     return {
       likes: []
     }
   },
   mounted () {
+    this.$store.commit('setLoading', true)
     axios
       .get('/v1/likes')
       .then((res) => {
+        this.$store.commit('setLoading', false)
         this.likes = res.data
       })
   }

@@ -7,7 +7,7 @@
         mdi-square
       </v-icon>
       <h4>
-        全ての投稿(シェア)
+        全ての投稿<span v-not-visible="'mobile'">(シェア)</span>
       </h4>
     </v-card-title>
     <PostContent

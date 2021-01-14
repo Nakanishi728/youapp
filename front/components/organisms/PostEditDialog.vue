@@ -7,7 +7,7 @@
     <v-card width="500px" class="mx-auto">
       <v-toolbar flat>
         <v-toolbar-title>
-          編集
+          投稿編集
         </v-toolbar-title>
         <v-spacer />
         <v-btn
@@ -18,7 +18,7 @@
         </v-btn>
       </v-toolbar>
       <v-form>
-        <ValidationObserver ref="obs" v-slot="ObserverProps">
+        <ValidationObserver ref="obs" v-slot="{ invalid }">
           <div class="mt-2 pa-3">
             <TextField
               v-model="title"
@@ -42,7 +42,7 @@
               <v-btn
                 color="white lighten-3"
                 class="black--text"
-                :disabled="ObserverProps.invalid || !ObserverProps.validated"
+                :disabled="invalid"
                 @click="updatePost"
               >
                 編集

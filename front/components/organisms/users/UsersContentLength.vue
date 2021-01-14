@@ -1,5 +1,8 @@
 <template>
-  <v-card style="background-color:gray;">
+  <v-card
+    v-not-visible="'mobile'"
+    style="background-color:gray;"
+  >
     <v-row>
       <div class="user-content" style="width:100%;">
         <div class="user-content-container">
@@ -9,7 +12,7 @@
             </p>
           </v-col>
           <v-col>
-            <p class="user-info-box-name" style="margin:auto;">
+            <p class="user-info-box-name">
               ストック数: {{ likes.length }}
             </p>
           </v-col>
@@ -48,7 +51,7 @@ export default {
 .user-content-container {
   display: flex;
   justify-content: space-between;
-  margin-left: 30px;
+  margin: 0 50px;
   color: white;
   font-weight: bold;
 }

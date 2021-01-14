@@ -7,7 +7,7 @@
     <v-card width="700px" class="mx-auto">
       <v-toolbar flat>
         <v-toolbar-title>
-          イチオシに追加する(3つまで)
+          <span v-not-visible="'mobile'" @:click="show('mobile')">イチオシに追加する</span>(3つまで)
         </v-toolbar-title>
         <v-spacer />
         <v-btn
@@ -105,14 +105,11 @@ export default {
           setTimeout(() => {
             this.$store.commit('setFlash', {})
           }, 2000)
-          this.reload()
+          this.$router.push(`/posts/${i}`)
         })
     },
     closeDialog () {
       this.$emit('closeDialog')
-    },
-    reload () {
-      this.$router.go({ path: this.$router.currentRoute.path, force: true })
     }
   }
 }

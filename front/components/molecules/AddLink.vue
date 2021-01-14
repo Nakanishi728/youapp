@@ -15,7 +15,7 @@
         <input
           v-model="firstUrlForVeeValidate"
           type="text"
-          placeholder="URL"
+          placeholder="1つ目のURLは必須項目です"
           @input="$emit('update:firstUrl', $event.target.value)"
         >
         <div class="error-message">
@@ -33,7 +33,7 @@
         <input
           v-model="secondUrlForVeeValidate"
           type="text"
-          placeholder="URL"
+          placeholder="添付しない場合タップしてください"
           @input="$emit('update:secondUrl', $event.target.value)"
         >
         <div class="error-message">
@@ -51,7 +51,7 @@
         <input
           v-model="thirdUrlForVeeValidate"
           type="text"
-          placeholder="URL"
+          placeholder="添付しない場合タップしてください"
           @input="$emit('update:thirdUrl', $event.target.value)"
         >
         <div class="error-message">

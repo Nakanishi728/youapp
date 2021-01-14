@@ -62,9 +62,11 @@ export default {
     }
   },
   mounted () {
+    this.$store.commit('setLoading', true)
     axios
       .get('/v1/posts')
       .then((res) => {
+        this.$store.commit('setLoading', false)
         this.posts = res.data
       })
   },

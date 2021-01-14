@@ -5,7 +5,7 @@
       class="mx-auto my-4"
     >
       <v-card-title>
-        ユーザー掲示板(PUSHARを使い始めて間もないユーザーが掲示されています)
+        ユーザー掲示板<span v-not-visible="'tablet'" @:click="show('tablet')">(PUSHARを使い始めて間もないユーザーが掲示されています)</span>
       </v-card-title>
     </v-card>
     <v-list two-line>
@@ -79,6 +79,11 @@ export default {
           this.notFound = true
         }
       })
+  },
+  methods: {
+    show (str) {
+      alert(str)
+    }
   }
 }
 </script>

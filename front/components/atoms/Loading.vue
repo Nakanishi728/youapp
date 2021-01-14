@@ -1,11 +1,7 @@
 <template>
-  <div class="loader-container">
-    <div class="loader">
-      <div class="ball-scale-multiple">
-        <div />
-        <div />
-        <div />
-      </div>
+  <div class="loading">
+    <div class="animation">
+      Loading...
     </div>
   </div>
 </template>
@@ -18,21 +14,32 @@ export default {
 </script>
 
 <style  lang="scss" scoped>
-.loader-container {
+.loading{
   position: fixed;
-  top: 0;
-  z-index: 999;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background: black;
-  opacity: 0.7;
+  top: 0px;
+  left: 0px;
+  background: #000;
+  z-index: 9999;
 }
-
-.loader {
+.animation{
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  transform:scale(2, 2)
+  color: #fff;
+  -webkit-animation: lodanimetion 1500ms ease-out forwards infinite;
+  animation: lodanimetion 1500ms ease-out forwards infinite;
+}
+@keyframes lodanimetion {
+  from,to {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
 }
 </style>

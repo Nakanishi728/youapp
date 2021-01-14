@@ -58,6 +58,11 @@ import axios from '@/plugins/axios'
 import firebase from '@/plugins/firebase'
 
 export default {
+  fetch ({ redirect, store }) {
+    if (store.state.currentUser) {
+      return redirect('/')
+    }
+  },
   data () {
     return {
       email: '',
@@ -109,11 +114,6 @@ export default {
           })(error.code)
           this.$store.commit('setLoading', false)
         })
-    },
-    fetch ({ redirect, store }) {
-      if (store.state.currentUser) {
-        return redirect('/')
-      }
     }
   }
 }
