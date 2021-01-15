@@ -28,11 +28,16 @@
         <v-btn
           color="white lighten-2"
           class="mt-4 blue--text more-loading"
-          style="width:70%;"
+          style="width:60%;"
           @click="moreLoading"
         >
-          ストックをもっと見る
+          STOCKをもっと見る
         </v-btn>
+      </v-row>
+      <v-row>
+        <v-col>
+          <ScrollTop />
+        </v-col>
       </v-row>
     </div>
   </v-container>

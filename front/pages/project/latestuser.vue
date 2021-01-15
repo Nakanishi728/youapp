@@ -11,6 +11,11 @@
           <UsersLatest />
         </v-col>
       </v-row>
+      <v-row>
+        <v-col>
+          <ScrollTop />
+        </v-col>
+      </v-row>
     </div>
   </v-container>
 </template>

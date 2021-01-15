@@ -18,10 +18,9 @@
       <div class="post-container">
         <div class="post-show-change-box">
           <v-btn
-            outlined
             fab
             small
-            color="black lighten-3"
+            color="white lighten-3"
             @click="deleteLike"
           >
             <v-icon>mdi-minus</v-icon>
