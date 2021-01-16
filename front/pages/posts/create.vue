@@ -11,7 +11,7 @@
           <TextField
             v-model="title"
             label="必須)Rails,Docker (短的に)"
-            rules="max:80|required"
+            rules="max:30|required"
           />
           <AddLink
             rules="regex:https?://([\w-]+\.)+[\w-]+(/[\w- .?%&=]*)?"

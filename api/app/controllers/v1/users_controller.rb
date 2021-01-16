@@ -1,5 +1,5 @@
 class V1::UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update update_avatar destroy following followers]
+  before_action :set_user, only: %i[show update update_avatar destroy following followers]
 
   def index
     if params[:uid]

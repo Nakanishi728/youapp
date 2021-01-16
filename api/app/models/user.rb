@@ -10,6 +10,10 @@ class User < ApplicationRecord
   has_many :follower_relationships, foreign_key: 'following_id', class_name: 'Relationship', dependent: :destroy
   has_many :followers, through: :follower_relationships
 
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :uid, presence: true
+
   def avatar_url
     avatar.attached? ? url_for(avatar) : nil
   end
