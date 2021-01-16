@@ -2,16 +2,16 @@ class V1::PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
   def index
-    if params[:offset]
-      @posts = Post.includes({user: {avatar_attachment: :blob}}, :links).limit(20).order("created_at DESC").offset(params[:offset])
-    else
-      @posts = Post.includes({user: {avatar_attachment: :blob}}, :links).limit(20).order("created_at DESC")
-    end
+    @posts = if params[:offset]
+               Post.includes({ user: { avatar_attachment: :blob } }, :links).limit(20).order('created_at DESC').offset(params[:offset])
+             else
+               Post.includes({ user: { avatar_attachment: :blob } }, :links).limit(20).order('created_at DESC')
+             end
     render json: @posts
   end
 
   def postlists
-    @posts = Post.where(user_id: params[:id]).limit(10).order("created_at DESC")
+    @posts = Post.where(user_id: params[:id]).limit(10).order('created_at DESC')
     render json: @posts
   end
 
@@ -46,11 +46,12 @@ class V1::PostsController < ApplicationController
   end
 
   private
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    def post_params
-      params.require(:post).permit(:title, :user_id, :point)
-    end
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :user_id, :point)
+  end
 end

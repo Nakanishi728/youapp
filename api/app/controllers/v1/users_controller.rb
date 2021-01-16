@@ -12,7 +12,7 @@ class V1::UsersController < ApplicationController
   end
 
   def latest
-    @users = User.includes(:posts).limit(50).order("created_at DESC")
+    @users = User.includes(:posts).limit(50).order('created_at DESC')
 
     render json: @users
   end
@@ -31,9 +31,7 @@ class V1::UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
-      render json: @user
-    end
+    render json: @user if @user.update(user_params)
   end
 
   def update_avatar

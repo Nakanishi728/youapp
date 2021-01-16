@@ -22,5 +22,4 @@ Rails.application.routes.draw do
     get 'relationships/follower', to: 'relationships#follower'
     delete 'relationships', to: 'relationships#destroy'
   end
- end
- 
+end
