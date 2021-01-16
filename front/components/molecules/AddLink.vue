@@ -33,7 +33,7 @@
         <input
           v-model="secondUrlForVeeValidate"
           type="text"
-          placeholder="添付しない場合タップ後次へ"
+          placeholder="2つ目は添付しなくても良い"
           @input="$emit('update:secondUrl', $event.target.value)"
         >
         <div class="error-message">
@@ -51,7 +51,7 @@
         <input
           v-model="thirdUrlForVeeValidate"
           type="text"
-          placeholder="添付しない場合タップ後次へ"
+          placeholder="3つ目も添付しなくても良い"
           @input="$emit('update:thirdUrl', $event.target.value)"
         >
         <div class="error-message">

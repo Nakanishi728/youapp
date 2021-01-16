@@ -36,6 +36,9 @@
         :rules="rules"
         @change="onImagePicked"
       />
+      <p v-if="error" class="errors">
+        {{ error }}
+      </p>
       <v-row justify="end">
         <v-btn
           color="black lighten-3"
@@ -67,7 +70,8 @@ export default {
   data () {
     return {
       avatar: [],
-      uploadImageUrl: ''
+      uploadImageUrl: '',
+      error: ''
     }
   },
   computed: {
@@ -108,6 +112,14 @@ export default {
           setTimeout(() => {
             this.$store.commit('setFlash', {})
           }, 2000)
+        })
+        .catch((error) => {
+          this.error = ((code) => {
+            switch (code) {
+              default:
+                return 'ファイルがセットされているか確認してください'
+            }
+          })(error.code)
         })
     }
   }

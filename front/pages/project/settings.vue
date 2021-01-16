@@ -6,9 +6,7 @@
       @closeDialog="dialog = false"
       @loginSuccess="loginSuccess"
     />
-    <v-row
-      justify="center"
-    >
+    <v-row justify="center">
       <v-card
         flat
         width="500px"

@@ -179,7 +179,9 @@ export default {
     },
     changeUsersPassword () {
       const user = firebase.auth().currentUser
+      this.$store.commit('setLoading', true)
       user.updatePassword(this.password).then(() => {
+        this.$store.commit('setLoading', false)
         this.$store.commit('setFlash', {
           status: true,
           message: 'パスワードを変更しました'
@@ -190,6 +192,19 @@ export default {
           this.$store.commit('setFlash', {})
         }, 2000)
       })
+        .catch((error) => {
+          this.error = ((code) => {
+            switch (code) {
+              case 'auth/wrong-password':
+                return 'パスワードが正しくありません'
+              case 'auth/weak-password':
+                return 'パスワードは最低6文字以上にしてください'
+              default:
+                return 'パスワードをご確認ください'
+            }
+          })(error.code)
+          this.$store.commit('setLoading', false)
+        })
     },
     openDialogForEmail () {
       this.isEmail = true

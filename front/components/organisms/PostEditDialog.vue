@@ -1,7 +1,7 @@
 <template>
   <v-dialog
     v-model="dialogStatus"
-    max-width="500px"
+    width="500px"
     persistent
   >
     <v-card width="500px" class="mx-auto">
@@ -39,6 +39,11 @@
               :counter="140"
             />
             <v-row justify="center">
+              <p v-if="error" class="errors">
+                {{ error }}
+              </p>
+            </v-row>
+            <v-row justify="center">
               <v-btn
                 color="white lighten-3"
                 class="black--text"
@@ -72,7 +77,8 @@ export default {
       point: '',
       firstUrl: '',
       secondUrl: '',
-      thirdUrl: ''
+      thirdUrl: '',
+      error: ''
     }
   },
   computed: {
@@ -122,6 +128,15 @@ export default {
             this.$store.commit('setFlash', {})
           }, 2000)
           this.$router.replace(`/users/${this.$store.state.currentUser.id}`)
+        })
+        .catch((error) => {
+          this.error = ((code) => {
+            switch (code) {
+              default:
+                return '投稿内容を確認してください'
+            }
+          })(error.code)
+          this.$store.commit('setLoading', false)
         })
     },
     closeDialog () {

@@ -3,4 +3,6 @@ class Post < ApplicationRecord
   has_many :links, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :pickups, dependent: :destroy
+  validates :title, presence: true
+  validates :point, presence: true
 end
