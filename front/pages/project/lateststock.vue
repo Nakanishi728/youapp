@@ -13,7 +13,7 @@
             class="mx-auto my-4"
           >
             <v-card-title>
-              USERストック一覧<span v-not-visible="'tablet'" @:click="show('tablet')">(他のユーザーがどんなURLに興味を持っているのか見てみよう)</span>
+              USERストック一覧<span v-not-visible="'mobile'">(他のユーザーがどんなURLに興味を持っているのか見てみよう)</span>
             </v-card-title>
           </v-card>
           <StockLatest

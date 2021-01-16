@@ -10,7 +10,7 @@
         <div class="create-post-box">
           <TextField
             v-model="title"
-            label="例) Rails+Docker+Nuxt (短的に分かりやすく)"
+            label="例)Rails,Docker (短的に)"
             rules="max:80|required"
           />
           <AddLink
@@ -22,7 +22,7 @@
           />
           <TextArea
             v-model="point"
-            label="例) ログイン機能実装の参考になりました (自身の体験を踏まえて)"
+            label="例) 自身の体験を踏まえて"
             rules="max:140|required"
             :counter="140"
           />

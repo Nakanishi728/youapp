@@ -179,9 +179,7 @@ export default {
     },
     changeUsersPassword () {
       const user = firebase.auth().currentUser
-      this.$store.commit('setLoading', true)
       user.updatePassword(this.password).then(() => {
-        this.$store.commit('setLoading', false)
         this.$store.commit('setFlash', {
           status: true,
           message: 'パスワードを変更しました'
@@ -205,18 +203,12 @@ export default {
 }
 </script>
 
-<style>
+<style type="scoped">
 .user-edit-title {
   font-size: 24px;
 }
 
 .password-box {
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px dashed#B3E5FC;
-}
-
-.user-destroy-box {
   margin-top: 24px;
   padding-top: 16px;
   border-top: 1px dashed#B3E5FC;

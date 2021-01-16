@@ -91,7 +91,6 @@ export default {
       }
     },
     changeUsersAvatar () {
-      this.$store.commit('setLoading', true)
       const formData = new FormData()
       formData.append('avatar', this.avatar)
       const headers = {
@@ -102,7 +101,6 @@ export default {
         .then((res) => {
           this.avatar = res.data.avatar
           this.$store.commit('setUserAvatarUrl', res.data.avatar_url)
-          this.$store.commit('setLoading', false)
           this.$store.commit('setFlash', {
             status: true,
             message: 'アバターを変更しました'

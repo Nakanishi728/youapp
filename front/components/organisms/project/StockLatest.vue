@@ -3,25 +3,10 @@
     <v-list two-line>
       <v-list-item>
         <v-list-item-title>
-          <v-avatar
-            class="mt-2"
-          >
-            <img
-              v-if="like.user.avatar_url"
-              :src="like.user.avatar_url"
-              size="30"
-              style="margin-bottom:15px;"
-              alt="Avatar"
-            >
-            <v-icon
-              v-else
-              size="40"
-              color="light-blue"
-              alt="Avater"
-            >
-              mdi-account-circle
-            </v-icon>
-          </v-avatar>
+          <UsersAvatar
+            :size="36"
+            :user="like.user"
+          />
           <nuxt-link
             v-not-visible="'mobile'"
             :to="`/users/${like.user.id}`"

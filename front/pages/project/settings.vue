@@ -18,7 +18,7 @@
           退会確定画面
         </v-card-title>
         <v-card-title class="justify-center">
-          退会
+          退会確定
         </v-card-title>
         <v-divider />
         <v-card-text class="justify-center">
