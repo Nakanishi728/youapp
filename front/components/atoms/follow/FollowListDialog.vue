@@ -23,23 +23,10 @@
           :key="f.id"
         >
           <v-list-item-title>
-            <v-avatar>
-              <img
-                v-if="f.avatar_url"
-                :src="f.avatar_url"
-                size="40"
-                style="margin-bottom:15px;"
-                alt="Avatar"
-              >
-              <v-icon
-                v-else
-                size="40"
-                color="light-blue"
-                alt="Avater"
-              >
-                mdi-account-circle
-              </v-icon>
-            </v-avatar>
+            <UsersAvatar
+              :size="36"
+              :user="f"
+            />
             <nuxt-link
               :to="`/users/${f.id}`"
               style="color:#37474F;"

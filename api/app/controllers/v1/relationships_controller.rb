@@ -1,8 +1,7 @@
 class V1::RelationshipsController < ApplicationController
-
   def follower
-      @relationship = Relationship.where(follower_id: params[:follower_id], following_id: params[:following_id])
-      render json: @relationship
+    @relationship = Relationship.where(follower_id: params[:follower_id], following_id: params[:following_id])
+    render json: @relationship
   end
 
   def create
@@ -17,5 +16,4 @@ class V1::RelationshipsController < ApplicationController
     current_user = User.find_by(id: params[:follower_id])
     current_user.unfollow!(@user)
   end
-
 end

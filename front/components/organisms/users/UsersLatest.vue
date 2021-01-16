@@ -5,32 +5,17 @@
       class="mx-auto my-4"
     >
       <v-card-title>
-        User最新50<span v-not-visible="'tablet'" @:click="show('tablet')">(PUSHARを使い始めて間もないユーザーが掲示されています)</span>
+        USER最新50<span v-not-visible="'mobile'">(PUSHARを使い始めて間もないユーザーが掲示されています)</span>
       </v-card-title>
     </v-card>
     <v-list two-line>
       <template v-for="(user, index) in users">
         <v-list-item :key="user.index">
           <v-list-item-title>
-            <v-avatar
-              class="mt-2"
-            >
-              <img
-                v-if="user.avatar_url"
-                :src="user.avatar_url"
-                size="30"
-                style="margin-bottom:15px;"
-                alt="Avatar"
-              >
-              <v-icon
-                v-else
-                size="40"
-                color="light-blue"
-                alt="Avater"
-              >
-                mdi-account-circle
-              </v-icon>
-            </v-avatar>
+            <UsersAvatar
+              :size="36"
+              :user="user"
+            />
             <nuxt-link
               :to="`/users/${user.id}`"
               style="color:#37474F;"

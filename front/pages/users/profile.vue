@@ -2,8 +2,8 @@
   <v-container>
     <v-card class="mx-auto mt-5 pa-5" width="600px">
       <v-card-title>
-        <h2 class="user-edit-title">
-          プロフィール編集
+        <h2 class="user-profile-title">
+          プロフィール
         </h2>
       </v-card-title>
       <v-card-text>
@@ -81,3 +81,9 @@ export default {
   }
 }
 </script>
+
+<style type="scoped">
+.user-profile-title {
+  font-size: 24px;
+}
+</style>

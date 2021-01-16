@@ -13,7 +13,7 @@
             class="mx-auto my-4"
           >
             <v-card-title>
-              USERストック一覧<span v-not-visible="'tablet'" @:click="show('tablet')">(他のユーザーがどんなURLに興味を持っているのか見てみよう)</span>
+              USERストック一覧<span v-not-visible="'mobile'">(他のユーザーがどんなURLに興味を持っているのか見てみよう)</span>
             </v-card-title>
           </v-card>
           <StockLatest
@@ -28,11 +28,16 @@
         <v-btn
           color="white lighten-2"
           class="mt-4 blue--text more-loading"
-          style="width:70%;"
+          style="width:60%;"
           @click="moreLoading"
         >
-          ストックをもっと見る
+          STOCKをもっと見る
         </v-btn>
+      </v-row>
+      <v-row>
+        <v-col>
+          <ScrollTop />
+        </v-col>
       </v-row>
     </div>
   </v-container>

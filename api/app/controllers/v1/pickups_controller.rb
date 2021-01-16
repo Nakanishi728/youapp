@@ -1,7 +1,6 @@
 class V1::PickupsController < ApplicationController
-
   def index
-    @pickups = Pickup.where(user_id: params[:id]).limit(3).order("created_at DESC")
+    @pickups = Pickup.where(user_id: params[:id]).limit(3).order('created_at DESC')
 
     render json: @pickups
   end
@@ -22,7 +21,8 @@ class V1::PickupsController < ApplicationController
   end
 
   private
-    def pickup_params
-      params.require(:pickup).permit(:id, :post_id, :user_id)
-    end
+
+  def pickup_params
+    params.require(:pickup).permit(:id, :post_id, :user_id)
+  end
 end

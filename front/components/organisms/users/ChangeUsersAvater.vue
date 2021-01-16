@@ -36,6 +36,9 @@
         :rules="rules"
         @change="onImagePicked"
       />
+      <p v-if="error" class="errors">
+        {{ error }}
+      </p>
       <v-row justify="end">
         <v-btn
           color="black lighten-3"
@@ -67,7 +70,8 @@ export default {
   data () {
     return {
       avatar: [],
-      uploadImageUrl: ''
+      uploadImageUrl: '',
+      error: ''
     }
   },
   computed: {
@@ -91,7 +95,6 @@ export default {
       }
     },
     changeUsersAvatar () {
-      this.$store.commit('setLoading', true)
       const formData = new FormData()
       formData.append('avatar', this.avatar)
       const headers = {
@@ -102,7 +105,6 @@ export default {
         .then((res) => {
           this.avatar = res.data.avatar
           this.$store.commit('setUserAvatarUrl', res.data.avatar_url)
-          this.$store.commit('setLoading', false)
           this.$store.commit('setFlash', {
             status: true,
             message: 'アバターを変更しました'
@@ -110,6 +112,14 @@ export default {
           setTimeout(() => {
             this.$store.commit('setFlash', {})
           }, 2000)
+        })
+        .catch((error) => {
+          this.error = ((code) => {
+            switch (code) {
+              default:
+                return 'ファイルがセットされているか確認してください'
+            }
+          })(error.code)
         })
     }
   }

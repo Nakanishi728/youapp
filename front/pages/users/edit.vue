@@ -192,6 +192,19 @@ export default {
           this.$store.commit('setFlash', {})
         }, 2000)
       })
+        .catch((error) => {
+          this.error = ((code) => {
+            switch (code) {
+              case 'auth/wrong-password':
+                return 'パスワードが正しくありません'
+              case 'auth/weak-password':
+                return 'パスワードは最低6文字以上にしてください'
+              default:
+                return 'パスワードをご確認ください'
+            }
+          })(error.code)
+          this.$store.commit('setLoading', false)
+        })
     },
     openDialogForEmail () {
       this.isEmail = true
@@ -205,18 +218,12 @@ export default {
 }
 </script>
 
-<style>
+<style type="scoped">
 .user-edit-title {
   font-size: 24px;
 }
 
 .password-box {
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px dashed#B3E5FC;
-}
-
-.user-destroy-box {
   margin-top: 24px;
   padding-top: 16px;
   border-top: 1px dashed#B3E5FC;
