@@ -12,16 +12,20 @@ github: https://github.com/Nakanisi-Kanta/youapp
 
 # ②アプリケーションの詳細について
 ## 機能
-- ログイン機能(firebase, 新規登録、ログイン、ログアウト, 退会も出来ます)<br><br>
-![ログイン機能](https://user-images.githubusercontent.com/35006561/91411057-c6632400-e882-11ea-93ea-cf61bf4993c6.gif)
-- パスワード再設定(firebase, 登録したメールアドレスにパスワード再設定用のurl発行できます)<br><br>
+- 新規登録機能(firebase-Authentication, 新規登録)<br><br>
+![新規登録機能](https://gyazo.com/ad295d675060bbf4356320ec69a5c3df)
+- ログイン機能(firebase-Authentication, ログイン)<br><br>
+![ログイン機能](https://gyazo.com/535fdcbc50e3b9710c17b7923c916609)
+- ログアウト機能(firebase-Authentication, ログアウト)<br><br>
+![ログアウト機能](https://gyazo.com/eed3c9f91794f430902f86565a3e216d)
+- パスワード再設定(firebase-Authentication, 登録したメールアドレスにパスワード再設定用のurl発行できます)<br><br>
 ![パスワード再設定機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
 - URL投稿機能(CRUD),modalによる投稿画面<br><br>
-![URL投稿機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
+![URL投稿機能](https://gyazo.com/a76b109fef5e4b5e6d18139a6ba05188)
 - URL検索機能(Vueでのリアルタイム検索, URLに関する情報を検索出来ます)<br><br>
 ![URL検索機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
 - アバター, 画像保存機能(activestorage, ユーザー画像をアップロード出来ます)<br>
-![アバター画像保存機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
+![アバター画像保存機能](https://gyazo.com/d945c09a2e5d2d24fd91298151656d2d)
 - プロフィール編集機能(ユーザーを登録、プロフィールを編集・削除出来ます)<br><br>
 ![プロフィール編集機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
 - 自分の投稿へのピックアップ機能(自分投稿からイチオシをピックアップして、編集・削除出来ます)<br><br>
