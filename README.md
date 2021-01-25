@@ -12,7 +12,7 @@ github: https://github.com/Nakanisi-Kanta/youapp
 
 # ②アプリケーションの詳細について
 ## 機能
-- ログイン機能(firebase, 新規登録、ログイン、ログアウト, 退会も出来ます)<br>
+- ログイン機能(firebase, 新規登録、ログイン、ログアウト, 退会も出来ます)<br><br>
 ![ログイン機能](https://user-images.githubusercontent.com/35006561/91411057-c6632400-e882-11ea-93ea-cf61bf4993c6.gif)
 - パスワード再設定(firebase, 登録したメールアドレスにパスワード再設定用のurl発行できます)<br><br>
 ![パスワード再設定機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
