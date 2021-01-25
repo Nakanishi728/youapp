@@ -140,7 +140,6 @@ URL:  本番環境稼働に関しては、現在対応中
 
 ## インフラ構成図
  ### ※作成予定
-![インフラ構成](https://user-images.githubusercontent.com/35006561/90375824-703af780-e0b0-11ea-8d43-7edfb322e6c1.png)
 
 ##  セールスポイント
 - Frontend、Backendを切り分け、Dockerを利用して疎結合のシステムを実現。
