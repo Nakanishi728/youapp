@@ -36,6 +36,8 @@ URL:  本番環境稼働に関しては、現在対応中
 ![ストック機能](https://gyazo.com/df2a1b29a8c3c283f1d34f6981f3b190.gif)
 - フォロー,フォロワー機能(ユーザー同士でフォロー・フォロー解除出来ます)<br><br>
 ![フォロー・フォロワー機能](https://gyazo.com/8a2d435b93842b6c4ad41fdf890729d7.gif)
+- 退会機能(ユーザー情報を削除出来ます)<br><br>
+![退会機能](https://gyazo.com/c8e7bef32c8629d968a8d3897a768d8c.gif)
 
 ## 使用技術
 - フロントエンド：Nuxt.js
@@ -137,4 +139,13 @@ URL:  本番環境稼働に関しては、現在対応中
 - belongs_to :following, class_name: 'User'
 
 ## インフラ構成図
-作成中
+ ### ※作成予定
+![インフラ構成](https://user-images.githubusercontent.com/35006561/90375824-703af780-e0b0-11ea-8d43-7edfb322e6c1.png)
+
+##  セールスポイント
+- Frontend、Backendを切り分け、Dockerを利用して疎結合のシステムを実現。
+- DockerComposeを用いて開発環境構築をしている。
+- Frontendにて、Nuxt.jsを用いてSPAを実現。
+- UIUX・デザインにこだわり、より少ない導線・心地よい使用感でのサービス提供の実現。
+- レスポンシブデザインに対応している。
+- 外部API（firebase）を用いて機能を実現している。
