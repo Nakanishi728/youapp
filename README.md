@@ -6,7 +6,7 @@ github: https://github.com/Nakanisi-Kanta/youapp
 - アプリケーション名:「PUSHAR」
 - 内容：プログラミングに関するサイトのURLを共有するアプリケーションです。
 - 作成理由：関連するキーワードから、興味のあるWebサイトのURLのみを簡単に検索・保存するアプリが欲しいと感じたから。<br>『プログラミング学習において関連ページにどんどん進んで行ってしまうとGoogleタグの溜まりすぎで目的のページを見失ってしまうことがあったので、URLのみを共有できれば』の問題を**Programming + URL + Sharing**で解決することをコンセプトにしたアプリケーションです。<br>
-![リロード機能](https://user-images.githubusercontent.com/35006561/91413161-aed96a80-e885-11ea-89a8-dcf338d116b3.gif)
+![リロード機能](https://gyazo.com/3165bbeb00abf4c1a9634a6f3f424b27.gif)
 
 
 
@@ -28,8 +28,8 @@ github: https://github.com/Nakanisi-Kanta/youapp
 ![アバター画像保存機能](https://gyazo.com/d945c09a2e5d2d24fd91298151656d2d.gif)
 - プロフィール編集機能(ユーザーのプロフィールを編集が可能です)<br><br>
 ![プロフィール編集機能](https://gyazo.com/585c32b44dd14120077cf4fffe8f077e.gif)
-- 自分の投稿へのピックアップ機能(自分投稿からイチオシをピックアップして、編集・削除出来ます)<br><br>
-![ピックアップ機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
+- 自分の投稿へのピックアップ機能(自分投稿からイチオシを追加・削除出来ます)<br><br>
+![ピックアップ機能](https://gyazo.com/1386c5bc3908526e7f89473393839275.gif)
 - 投稿へのストック機能(他人の投稿を簡単に保存・削除可能です)<br><br>
 ![ストック機能](https://gyazo.com/df2a1b29a8c3c283f1d34f6981f3b190.gif)
 - フォロー,フォロワー機能(ユーザー同士でフォロー・フォロー解除出来ます)<br><br>
@@ -38,7 +38,7 @@ github: https://github.com/Nakanisi-Kanta/youapp
 ## 使用技術
 - フロントエンド：Nuxt.js
 - バックエンド: Ruby on Rails(api), rspec, rubocop
-- インフラ: AWSを予定
+- インフラ: AWS(ECS)を予定
 
 ## 現状
 - 本番環境に関してはECSでのデプロイを予定しております。
