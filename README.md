@@ -26,7 +26,7 @@ URL:  本番環境稼働に関しては、現在対応中
 ![URL投稿機能](https://gyazo.com/a76b109fef5e4b5e6d18139a6ba05188.gif)
 - URL検索機能(Vueでのリアルタイム検索, URLに関する情報を検索出来ます)<br><br>
 ![URL検索機能](https://gyazo.com/745d770be5a26a9aa4bd50d69782b387.gif)
-- マイページ<br><br>
+- マイページ(現在の投稿数とストック数が記載されています)<br><br>
 ![マイページ](https://gyazo.com/4949bd815546b223f31ad56df638bc12.gif)
 - アバター, 画像保存機能(activestorage, ユーザー画像をアップロード出来ます)<br>
 ![アバター画像保存機能](https://gyazo.com/d945c09a2e5d2d24fd91298151656d2d.gif)
