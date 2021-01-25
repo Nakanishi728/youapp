@@ -5,7 +5,7 @@ github: https://github.com/Nakanisi-Kanta/youapp
 ## 概要
 - アプリケーション名:「PUSHAR」
 - 内容：プログラミングに関するサイトのURLを共有するアプリケーションです。
-- 作成理由：関連するキーワードから、興味のあるWebサイトのURLのみを簡単に検索・保存するアプリが欲しいと感じたから。『プログラミング学習において関連ページにどんどん進んで行ってしまうとGoogleタグの溜まりすぎで目的のページを見失ってしまうことがあったので、URLのみを共有できれば』の問題を**Programming + URL + Sharing**で解決することをコンセプトにしたアプリケーションです。<br>
+- 作成理由：関連するキーワードから、興味のあるWebサイトのURLのみを簡単に検索・保存するアプリが欲しいと感じたから。<br>『プログラミング学習において関連ページにどんどん進んで行ってしまうとGoogleタグの溜まりすぎで目的のページを見失ってしまうことがあったので、URLのみを共有できれば』の問題を**Programming + URL + Sharing**で解決することをコンセプトにしたアプリケーションです。<br>
 ![リロード機能](https://user-images.githubusercontent.com/35006561/91413161-aed96a80-e885-11ea-89a8-dcf338d116b3.gif)
 
 
@@ -14,21 +14,21 @@ github: https://github.com/Nakanisi-Kanta/youapp
 ## 機能
 - ログイン機能(firebase, 新規登録、ログイン、ログアウト, 退会も出来ます)<br>
 ![ログイン機能](https://user-images.githubusercontent.com/35006561/91411057-c6632400-e882-11ea-93ea-cf61bf4993c6.gif)
-- パスワード再設定(firebase, 登録したメールアドレスにパスワード再設定用のurl発行できます)<br>
+- パスワード再設定(firebase, 登録したメールアドレスにパスワード再設定用のurl発行できます)<br><br>
 ![パスワード再設定機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- URL投稿機能(CRUD),modalによる投稿画面<br>
+- URL投稿機能(CRUD),modalによる投稿画面<br><br>
 ![URL投稿機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- URL検索機能(Vueでのリアルタイム検索, URLに関する情報を検索出来ます)<br>
+- URL検索機能(Vueでのリアルタイム検索, URLに関する情報を検索出来ます)<br><br>
 ![URL検索機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
 - アバター, 画像保存機能(activestorage, ユーザー画像をアップロード出来ます)<br>
 ![アバター画像保存機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- プロフィール編集機能(ユーザーを登録、プロフィールを編集・削除出来ます)<br>
+- プロフィール編集機能(ユーザーを登録、プロフィールを編集・削除出来ます)<br><br>
 ![プロフィール編集機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- 自分の投稿へのピックアップ機能(自分投稿からイチオシをピックアップして、編集・削除出来ます)<br>
+- 自分の投稿へのピックアップ機能(自分投稿からイチオシをピックアップして、編集・削除出来ます)<br><br>
 ![ピックアップ機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- 投稿へのストック機能(他人の投稿を簡単に保存可能です)<br>
+- 投稿へのストック機能(他人の投稿を簡単に保存可能です)<br><br>
 ![ストック機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- フォロー,フォロワー機能(ユーザー同士でフォロー・フォロー解除出来ます)<br>
+- フォロー,フォロワー機能(ユーザー同士でフォロー・フォロー解除出来ます)<br><br>
 ![フォロー・フォロワー機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
 
 ## 使用技術
