@@ -1,7 +1,7 @@
 # ①アプリケーションについて
 ## URL
 URL:  現在進行中
-github: https://github.com/Nakanisi-Kanta/youapp
+
 ## 概要
 - アプリケーション名:「PUSHAR」
 - 内容：プログラミングに関するサイトのURLを共有するアプリケーションです。
