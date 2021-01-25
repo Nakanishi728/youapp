@@ -13,11 +13,11 @@ github: https://github.com/Nakanisi-Kanta/youapp
 # ②アプリケーションの詳細について
 ## 機能
 - 新規登録機能(firebase-Authentication, 新規登録)<br><br>
-![新規登録機能](https://gyazo.com/ad295d675060bbf4356320ec69a5c3df)
+![新規登録機能](https://gyazo.com/ad295d675060bbf4356320ec69a5c3df.gif)
 - ログイン機能(firebase-Authentication, ログイン)<br><br>
-![ログイン機能](https://gyazo.com/535fdcbc50e3b9710c17b7923c916609)
+![ログイン機能](https://gyazo.com/535fdcbc50e3b9710c17b7923c916609.gif)
 - ログアウト機能(firebase-Authentication, ログアウト)<br><br>
-![ログアウト機能](https://gyazo.com/eed3c9f91794f430902f86565a3e216d)
+![ログアウト機能](https://gyazo.com/eed3c9f91794f430902f86565a3e216d.gif)
 - パスワード再設定(firebase-Authentication, 登録したメールアドレスにパスワード再設定用のurl発行できます)<br><br>
 ![パスワード再設定機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
 - URL投稿機能(CRUD),modalによる投稿画面<br><br>
