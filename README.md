@@ -17,23 +17,23 @@ github: https://github.com/Nakanisi-Kanta/youapp
 - ログイン機能(firebase-Authentication, ログイン)<br><br>
 ![ログイン機能](https://gyazo.com/535fdcbc50e3b9710c17b7923c916609.gif)
 - ログアウト機能(firebase-Authentication, ログアウト)<br><br>
-![ログアウト機能](https://gyazo.com/eed3c9f91794f430902f86565a3e216d.gif)
+![ログアウト機能](https://gyazo.com/528a8de7cc8e558a91f53e40f72241c6.gif)
 - パスワード再設定(firebase-Authentication, 登録したメールアドレスにパスワード再設定用のurl発行できます)<br><br>
-![パスワード再設定機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
+![パスワード再設定機能](https://gyazo.com/1bc73525b7caab26b293e53f16b7e63e.gif)
 - URL投稿機能(CRUD),modalによる投稿画面<br><br>
-![URL投稿機能](https://gyazo.com/a76b109fef5e4b5e6d18139a6ba05188)
+![URL投稿機能](https://gyazo.com/a76b109fef5e4b5e6d18139a6ba05188.gif)
 - URL検索機能(Vueでのリアルタイム検索, URLに関する情報を検索出来ます)<br><br>
-![URL検索機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
+![URL検索機能](https://gyazo.com/745d770be5a26a9aa4bd50d69782b387.gif)
 - アバター, 画像保存機能(activestorage, ユーザー画像をアップロード出来ます)<br>
-![アバター画像保存機能](https://gyazo.com/d945c09a2e5d2d24fd91298151656d2d)
-- プロフィール編集機能(ユーザーを登録、プロフィールを編集・削除出来ます)<br><br>
-![プロフィール編集機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
+![アバター画像保存機能](https://gyazo.com/d945c09a2e5d2d24fd91298151656d2d.gif)
+- プロフィール編集機能(ユーザーのプロフィールを編集が可能です)<br><br>
+![プロフィール編集機能](https://gyazo.com/585c32b44dd14120077cf4fffe8f077e.gif)
 - 自分の投稿へのピックアップ機能(自分投稿からイチオシをピックアップして、編集・削除出来ます)<br><br>
 ![ピックアップ機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- 投稿へのストック機能(他人の投稿を簡単に保存可能です)<br><br>
-![ストック機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
+- 投稿へのストック機能(他人の投稿を簡単に保存・削除可能です)<br><br>
+![ストック機能](https://gyazo.com/df2a1b29a8c3c283f1d34f6981f3b190.gif)
 - フォロー,フォロワー機能(ユーザー同士でフォロー・フォロー解除出来ます)<br><br>
-![フォロー・フォロワー機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
+![フォロー・フォロワー機能](https://gyazo.com/8a2d435b93842b6c4ad41fdf890729d7.gif)
 
 ## 使用技術
 - フロントエンド：Nuxt.js
