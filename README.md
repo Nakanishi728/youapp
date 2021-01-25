@@ -12,23 +12,23 @@ github: https://github.com/Nakanisi-Kanta/youapp
 
 # ②アプリケーションの詳細について
 ## 機能
-- ログイン機能(firebase)<br>
+- ログイン機能(firebase, 新規登録、ログイン、ログアウト, 退会も出来ます)<br>
 ![ログイン機能](https://user-images.githubusercontent.com/35006561/91411057-c6632400-e882-11ea-93ea-cf61bf4993c6.gif)
-- パスワード再設定(firebase)<br>
+- パスワード再設定(firebase, 登録したメールアドレスにパスワード再設定用のurl発行できます)<br>
 ![パスワード再設定機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
 - URL投稿機能(CRUD),modalによる投稿画面<br>
 ![URL投稿機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- URL検索機能(Vueでのリアルタイム検索)<br>
+- URL検索機能(Vueでのリアルタイム検索, URLに関する情報を検索出来ます)<br>
 ![URL検索機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- アバター, 画像保存機能(activestorage)<br>
+- アバター, 画像保存機能(activestorage, ユーザー画像をアップロード出来ます)<br>
 ![アバター画像保存機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- password,email,user編集機能<br>
+- プロフィール編集機能(ユーザーを登録、プロフィールを編集・削除出来ます)<br>
 ![プロフィール編集機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- 自分の投稿へのピックアップ機能<br>
+- 自分の投稿へのピックアップ機能(自分投稿からイチオシをピックアップして、編集・削除出来ます)<br>
 ![ピックアップ機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- 投稿へのストック機能<br>
+- 投稿へのストック機能(他人の投稿を簡単に保存可能です)<br>
 ![ストック機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
-- フォロー,フォロワー機能<br>
+- フォロー,フォロワー機能(ユーザー同士でフォロー・フォロー解除出来ます)<br>
 ![フォロー・フォロワー機能](https://user-images.githubusercontent.com/35006561/91411711-ad0ea780-e883-11ea-88df-48a7ebd976c0.gif)
 
 ## 使用技術
@@ -46,9 +46,9 @@ github: https://github.com/Nakanisi-Kanta/youapp
 | Column           | Type   | Options                       |
 | ---------------- | ------ | ----------------------------- |
 | name             | string | null: false                   |
-| email            | string | null: false                   |
+| email            | email  | null: false, uniqueness: true |
 | uid              | string | null: false                   |
-| profile          | string | null: false                   |
+| profile          | text   | null: false                   |
 
 
 ### アソシエーション
@@ -120,10 +120,10 @@ github: https://github.com/Nakanisi-Kanta/youapp
 
 ## Relationship テーブル
 
-| Column        | Type       | Options           |
-| ------------- | ---------- | ----------------  |
-| follower_id   | integer    | uniqueness: true  |
-| following_id  | integer    | uniqueness: true  |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | -----------------------------  |
+| follower_id   | integer    | null: false, uniqueness: true  |
+| following_id  | integer    | null: false, uniqueness: true  |
 
 ### アソシエーション
 
