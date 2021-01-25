@@ -18,7 +18,7 @@ URL:  本番環境稼働に関しては、現在対応中
 ![ログイン機能](https://gyazo.com/535fdcbc50e3b9710c17b7923c916609.gif)
 - ログアウト機能(firebase-Authentication, ログアウト)<br><br>
 ![ログアウト機能](https://gyazo.com/528a8de7cc8e558a91f53e40f72241c6.gif)
-- パスワード再設定(firebase-Authentication, 登録したメールアドレスにパスワード再設定用のurl発行できます)<br><br>
+- パスワード再設定(firebase-Authentication, 登録したメールアドレスにパスワード再設定用のurl発行出来ます)<br><br>
 ![パスワード再設定機能](https://gyazo.com/1bc73525b7caab26b293e53f16b7e63e.gif)<br><br>
 - 発行されたurlです<br><br>
 ![パスワード再設定機能](https://gyazo.com/483432abf43617d9e2541a4a27d83e1c.png)<br><br>
