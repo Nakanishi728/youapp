@@ -38,6 +38,8 @@ URL:  本番環境稼働に関しては、現在対応中
 ![ストック機能](https://gyazo.com/df2a1b29a8c3c283f1d34f6981f3b190.gif)
 - フォロー,フォロワー機能(ユーザー同士でフォロー・フォロー解除出来ます)<br><br>
 ![フォロー・フォロワー機能](https://gyazo.com/8a2d435b93842b6c4ad41fdf890729d7.gif)
+- ヘルプページ<br><br>
+![ヘルプページ](https://gyazo.com/441a04d0b09264c84d72120a97524a22.gif)
 - 退会機能(ユーザー情報を削除出来ます)<br><br>
 ![退会機能](https://gyazo.com/c8e7bef32c8629d968a8d3897a768d8c.gif)
 
