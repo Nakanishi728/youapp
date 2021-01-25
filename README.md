@@ -19,7 +19,9 @@ URL:  現在進行中
 - ログアウト機能(firebase-Authentication, ログアウト)<br><br>
 ![ログアウト機能](https://gyazo.com/528a8de7cc8e558a91f53e40f72241c6.gif)
 - パスワード再設定(firebase-Authentication, 登録したメールアドレスにパスワード再設定用のurl発行できます)<br><br>
-![パスワード再設定機能](https://gyazo.com/1bc73525b7caab26b293e53f16b7e63e.gif)
+![パスワード再設定機能](https://gyazo.com/1bc73525b7caab26b293e53f16b7e63e.gif)<br><br>
+- 発行されたurlです<br><br>
+![パスワード再設定機能](https://gyazo.com/483432abf43617d9e2541a4a27d83e1c.png)<br><br>
 - URL投稿機能(CRUD),modalによる投稿画面<br><br>
 ![URL投稿機能](https://gyazo.com/a76b109fef5e4b5e6d18139a6ba05188.gif)
 - URL検索機能(Vueでのリアルタイム検索, URLに関する情報を検索出来ます)<br><br>
