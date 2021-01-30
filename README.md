@@ -6,7 +6,7 @@ URL:  本番環境稼働に関しては、現在対応中
 - アプリケーション名:「PUSHAR」
 - 内容：プログラミングに関するサイトのURLを共有するアプリケーションです。
 - 作成理由：関連するキーワードから、興味のあるWebサイトのURLのみを簡単に検索・保存するアプリが欲しいと思い作成。<br>特に、『プログラミング学習において関連ページにどんどん進んで行ってしまうとGoogleタグの溜まりすぎで目的のページを見失ってしまうことがあったので、URLのみを共有できれば』の問題を**Programming + URL + Sharing**で解決することをコンセプトにしたアプリケーションです。<br><br>
-![リロード機能](https://gyazo.com/3165bbeb00abf4c1a9634a6f3f424b27.gif)
+![リロード機能](https://gyazo.com/3165bbeb00abf4c1a9634a6f3f424b27.gif)
 
 
 
@@ -22,7 +22,7 @@ URL:  本番環境稼働に関しては、現在対応中
 ![パスワード再設定機能](https://gyazo.com/1bc73525b7caab26b293e53f16b7e63e.gif)<br><br>
 - 発行されたurlです<br><br>
 ![パスワード再設定機能](https://gyazo.com/483432abf43617d9e2541a4a27d83e1c.png)<br><br>
-- URL投稿機能(CRUD),modalによる投稿画面<br><br>
+- URL投稿機能(CRUD),投稿画面<br><br>
 ![URL投稿機能](https://gyazo.com/a76b109fef5e4b5e6d18139a6ba05188.gif)
 - URL検索機能(Vueでのリアルタイム検索, URLに関する情報を検索出来ます)<br><br>
 ![URL検索機能](https://gyazo.com/745d770be5a26a9aa4bd50d69782b387.gif)
